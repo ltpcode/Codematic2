@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7AFE5A2-76F8-45A2-8A2D-E4698312873E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Codematic</RootNamespace>
+    <AssemblyName>Codematic</AssemblyName>
+    <Win32Resource>
+    </Win32Resource>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>http://www.maticsoft.com/soft/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.1.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=1.1.0.1913, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="LTP.ConvertCS2VB, Version=1.0.2164.16699, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\LTP.ConvertCS2VB.dll</HintPath>
+    </Reference>
+    <Reference Include="LTP.TextEditor, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\LTP.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MagicLibrary, Version=1.7.0.0, Culture=neutral, PublicKeyToken=3a6eb82f876a49bc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\MagicLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.1.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PinkieControls, Version=1.0.1259.29927, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PinkieControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonDialogs\FrmGotoLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonDialogs\FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\CMTreeNode.cs" />
+    <Compile Include="Components\FormCommon.cs" />
+    <Compile Include="Components\LogInfo.cs" />
+    <Compile Include="Components\ObjHelper.cs" />
+    <Compile Include="Components\SysInfo.cs" />
+    <Compile Include="DbOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMySQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMySQL.Designer.cs">
+      <DependentUpon>LoginMySQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginOledbF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginOledbF.Designer.cs">
+      <DependentUpon>LoginOledbF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSQLite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginSQLite.Designer.cs">
+      <DependentUpon>LoginSQLite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewProjectDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectSet.Designer.cs">
+      <DependentUpon>NewProjectSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendErrInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendErrInfo.Designer.cs">
+      <DependentUpon>SendErrInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\CodeMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\CodeMaker.Designer.cs">
+      <DependentUpon>CodeMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\CodeMakerTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\CodeMakerTran.Designer.cs">
+      <DependentUpon>CodeMakerTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\CodeTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\CodeTemplate.Designer.cs">
+      <DependentUpon>CodeTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\DataList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\DataList.Designer.cs">
+      <DependentUpon>DataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\CodeMakerM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\CodeMakerM.Designer.cs">
+      <DependentUpon>CodeMakerM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\CodeExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\CodeExpTabInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\CodeExpTabInput.Designer.cs">
+      <DependentUpon>CodeExpTabInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\ConverteCS2VB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\DbToScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbTypeSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbTypeSel.Designer.cs">
+      <DependentUpon>DbTypeSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginOledb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginOra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbView.Designer.cs">
+      <DependentUpon>DbView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\CodeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\CodeEditor.Designer.cs">
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\DbBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\DbBrowser.Designer.cs">
+      <DependentUpon>DbBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\DbQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\DbQuery.Designer.cs">
+      <DependentUpon>DbQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\HtmlEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\HtmlEditor.Designer.cs">
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\IEView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\IEView.Designer.cs">
+      <DependentUpon>IEView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFile.Designer.cs">
+      <DependentUpon>NewFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProject.Designer.cs">
+      <DependentUpon>NewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionFrm.Designer.cs">
+      <DependentUpon>OptionFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClassView.resx">
+      <DependentUpon>ClassView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonDialogs\FrmGotoLine.resx">
+      <DependentUpon>FrmGotoLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonDialogs\FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbOption.resx">
+      <DependentUpon>DbOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMySQL.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginMySQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginOledbF.resx">
+      <DependentUpon>LoginOledbF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginSQLite.resx">
+      <DependentUpon>LoginSQLite.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectDB.resx">
+      <DependentUpon>NewProjectDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewProjectSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendErrInfo.resx">
+      <DependentUpon>SendErrInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\CodeMaker.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CodeMaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\CodeMakerTran.resx">
+      <DependentUpon>CodeMakerTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\CodeTemplate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CodeTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\DataList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\CodeMakerM.resx">
+      <DependentUpon>CodeMakerM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\CodeExport.resx">
+      <DependentUpon>CodeExport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\CodeExpTabInput.resx">
+      <DependentUpon>CodeExpTabInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\ConverteCS2VB.resx">
+      <DependentUpon>ConverteCS2VB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\DbToScript.resx">
+      <DependentUpon>DbToScript.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbTypeSel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DbTypeSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginOledb.resx">
+      <DependentUpon>LoginOledb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginOra.resx">
+      <DependentUpon>LoginOra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.de.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbView.resx">
+      <DependentUpon>DbView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\CodeEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\DbBrowser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DbBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\DbQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DbQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\HtmlEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\IEView.resx">
+      <DependentUpon>IEView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProject.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolutionExplorer.resx">
+      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\StartPageForm.resx">
+      <DependentUpon>StartPageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TempView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TempView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\DbToWeb.resx">
+      <DependentUpon>DbToWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\DbToWord.resx">
+      <DependentUpon>DbToWord.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\FrmAddToSnippet.resx">
+      <DependentUpon>FrmAddToSnippet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\ProjectExp.resx">
+      <DependentUpon>ProjectExp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\ProjectExpadd.resx">
+      <DependentUpon>ProjectExpadd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\ProjectSet.resx">
+      <DependentUpon>ProjectSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\RenameFrm.resx">
+      <DependentUpon>RenameFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\DataExport.resx">
+      <DependentUpon>DataExport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\SearchTables.resx">
+      <DependentUpon>SearchTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\TemplateBatch.resx">
+      <DependentUpon>TemplateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DALTypeAddIn.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DALTypeAddIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAddInManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcAddInManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcCodeSet.resx">
+      <DependentUpon>UcCodeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcCodeView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcCodeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDatatype.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDatatypeMap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcDatatypeMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDBSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcDBSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcLanguage.resx">
+      <DependentUpon>UcLanguage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcOptionEditor.resx">
+      <DependentUpon>UcOptionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcOptionsEnviroments.resx">
+      <DependentUpon>UcOptionsEnviroments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcOptionsQuerySettings.resx">
+      <DependentUpon>UcOptionsQuerySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcOptionStartUp.resx">
+      <DependentUpon>UcOptionStartUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcSysManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcSysManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SolutionExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\StartPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\StartPageForm.Designer.cs">
+      <DependentUpon>StartPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TempView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TempView.Designer.cs">
+      <DependentUpon>TempView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\DbToWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\DbToWeb.Designer.cs">
+      <DependentUpon>DbToWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\DbToWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\FrmAddToSnippet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\ProjectExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\ProjectExpadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\ProjectSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\RenameFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\DataExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\SearchTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\SearchTables.Designer.cs">
+      <DependentUpon>SearchTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\TemplateBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\TemplateBatch.Designer.cs">
+      <DependentUpon>TemplateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DALTypeAddIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DALTypeAddIn.Designer.cs">
+      <DependentUpon>DALTypeAddIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TempNode.cs">
+    </Compile>
+    <Compile Include="UserControls\UcAddInManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcAddInManage.Designer.cs">
+      <DependentUpon>UcAddInManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcCodeSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcCodeSet.Designer.cs">
+      <DependentUpon>UcCodeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcCodeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcCodeView.Designer.cs">
+      <DependentUpon>UcCodeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcDatatype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcDatatype.Designer.cs">
+      <DependentUpon>UcDatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcDatatypeMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcDatatypeMap.Designer.cs">
+      <DependentUpon>UcDatatypeMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcDBSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcDBSet.Designer.cs">
+      <DependentUpon>UcDBSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcLanguage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcLanguage.Designer.cs">
+      <DependentUpon>UcLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcOptionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcOptionsEnviroments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcOptionsQuerySettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcOptionStartUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcSysManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcSysManage.Designer.cs">
+      <DependentUpon>UcSysManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UpServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddInManager\AddInManager.csproj">
+      <Project>{5648140C-04A7-4FB5-8EA7-FED5DFD26B4C}</Project>
+      <Name>AddInManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderBLLComm\BuilderBLLComm.csproj">
+      <Project>{263E5EB9-C901-442F-8E3E-7CE38B59D8F2}</Project>
+      <Name>BuilderBLLComm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDAELLProc\BuilderDALELProc.csproj">
+      <Project>{B3EF95AE-944A-4638-AFC6-80786C724214}</Project>
+      <Name>BuilderDALELProc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALELParam\BuilderDALELParam.csproj">
+      <Project>{F998A3EB-A7C8-4572-ACE2-FD58F6E9562B}</Project>
+      <Name>BuilderDALELParam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALELSQL\BuilderDALELSQL.csproj">
+      <Project>{16229504-2E90-42E7-9BE9-185725FEC76E}</Project>
+      <Name>BuilderDALELSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALIBatisNetMapXML\BuilderDALIBatisNetMapXML.csproj">
+      <Project>{60CB7D74-7627-4863-929A-35A236B18CBD}</Project>
+      <Name>BuilderDALIBatisNetMapXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALIBatisNet\BuilderDALIBatisNet.csproj">
+      <Project>{99CE6BCE-80F4-4749-B551-C0156DC23073}</Project>
+      <Name>BuilderDALIBatisNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALParam\BuilderDALParam.csproj">
+      <Project>{AA674935-EE79-4A95-A13B-1E5CE8738B56}</Project>
+      <Name>BuilderDALParam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALProc\BuilderDALProc.csproj">
+      <Project>{3D640E34-5050-4B96-8800-315FF9EB5E23}</Project>
+      <Name>BuilderDALProc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALSQL\BuilderDALSQL.csproj">
+      <Project>{0ED67C0E-B710-44E5-8F87-59838E5BDBF6}</Project>
+      <Name>BuilderDALSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALTranMParam\BuilderDALTranMParam.csproj">
+      <Project>{6D2FC493-1326-49A6-903F-E6F775A57CCE}</Project>
+      <Name>BuilderDALTranMParam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderDALTranParam\BuilderDALTranParam.csproj">
+      <Project>{78FD809C-43FE-43EF-9A1E-AE91F358585D}</Project>
+      <Name>BuilderDALTranParam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderIDAL\BuilderIDAL.csproj">
+      <Project>{829C4CE6-21DE-4A18-ACE1-652897B0AADF}</Project>
+      <Name>BuilderIDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Builder\BuilderWeb\BuilderWeb.csproj">
+      <Project>{52D7457C-FD3A-4F39-9704-FF66A7A5F00A}</Project>
+      <Name>BuilderWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CmConfig\CmConfig.csproj">
+      <Project>{DC4F125A-E712-438E-B15E-76C3629E0E53}</Project>
+      <Name>CmConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeBuild\CodeBuild.csproj">
+      <Project>{06A653C6-834F-4FD8-A1DF-4D107131E2FB}</Project>
+      <Name>CodeBuild</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeHelper\CodeHelper.csproj">
+      <Project>{CBE47089-9D43-4943-A388-5192953C40C4}</Project>
+      <Name>CodeHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBFactory\DBFactory.csproj">
+      <Project>{D2A22092-453A-4CAD-898E-24013950D124}</Project>
+      <Name>DBFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbObject\DbObjects.csproj">
+      <Project>{DE024517-2FCC-45E7-9202-710EED1CF5A3}</Project>
+      <Name>DbObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBuilder\IBuilder.csproj">
+      <Project>{8FE4345A-3495-4597-BC6F-9C6D7D48B149}</Project>
+      <Name>IBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDbObject\IDBO.csproj">
+      <Project>{EEE41BE0-CCD0-413F-8455-EBA28E1385E5}</Project>
+      <Name>IDBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LTPTextEditor\LTPTextEditor.csproj">
+      <Project>{BD86B1FF-9B25-4ACE-8676-E63D5E6F2C45}</Project>
+      <Name>LTPTextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{15F54374-E676-40F3-B291-13E39A423338}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <None Include="images\loginsql.png" />
+    <None Include="images\SlnView\batchcs.png" />
+    <None Include="images\dbview\SQL.png" />
+    <None Include="Resources\n2.png" />
+    <None Include="Resources\startpagetop.png" />
+    <None Include="Resources\about3.jpg" />
+    <None Include="Resources\loginmysql.jpg" />
+    <None Include="Resources\ajax-loader1.gif" />
+    <None Include="Resources\Control.gif" />
+    <None Include="Resources\option.gif" />
+    <None Include="app.config" />
+    <None Include="Web References\UpServer\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UpServer\upserver.disco" />
+    <None Include="Web References\UpServer\upserver.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.maticsoft.com/upserver.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UpServer\</RelPath>
+      <UpdateFromURL>http://www.maticsoft.com/upserver.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Codematic_UpServer_UpServer</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

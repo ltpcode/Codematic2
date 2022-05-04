@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#
+DatabaseHost host = (DatabaseHost)(Host);
+#>
+using System; 
+using System.Text;
+using System.Collections.Generic; 
+using System.Data;
+
+namespace <#= host.NameSpace #>  
+<# if( host.Folder.Length > 0) {#>
+	.host.Folder
+<# } #>
+{
+<# if( host.TableDescription.Length > 0) {#>
+ //<#= host.TableDescription #>
+<# } #>
+public class <#= host.TableName #>
+{
+   public static void HelloPot()
+   {
+      Console.WriteLine("Hello, POT");
+   }
+}
+}
+
+<#+
+string ClassName ="MyClass";
+#>

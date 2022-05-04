@@ -1,0 +1,5 @@
+
+通过工厂模式来实现支持不同数据库类型。根据实际情况从解决方案中移除不需要的DAL.
+通过修改Web.config 的<add key="DAL" value="Maticsoft.SQLServerDAL" />实现加载不同的DAL程序集.
+OracleDAL
+SQLServerDAL

@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="<$$namespace$$>.Web.MasterPage" %>
+<%@ Register Src="~/Controls/copyright.ascx" TagName="copyright" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>模板页</title>
+    <link href="/style.css" type="text/css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center">
+        <table cellspacing="0" cellpadding="5" width="700" border="0">
+            <tr>
+                <td bgcolor='<%=Application[Session["Style"].ToString()+"xtable_bgcolor"]%>'>
+                    <table cellspacing="0" bordercolordark='<%=Application[Session["Style"].ToString()+"xtable_bordercolordark"]%>'
+                        bordercolorlight='<%=Application[Session["Style"].ToString()+"xtable_bordercolorlight"]%>'
+                        cellpadding="5" width="100%" border="1">
+                        <tr bgcolor="#e4e4e4">
+                            <td bgcolor='<%=Application[Session["Style"].ToString()+"xtable_titlebgcolor"]%>'
+                                height="22" align="left">
+                                <%=TabTitle%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="22">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <uc1:copyright ID="copyright1" runat="server" />
+    </form>
+</body>
+</html>

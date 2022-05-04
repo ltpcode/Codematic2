@@ -1,0 +1,1203 @@
+2010/4/18 18:34:43:未将对象引用设置到对象的实例。
+2010/4/18 18:34:55:未将对象引用设置到对象的实例。
+2010/4/18 18:36:28:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 19:38:28:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:05:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:12:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:22:45:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:25:06:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:26:55:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:27:42:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/4/18 22:38:05:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/14 22:47:49:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 10:41:18:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 10:42:26:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:28:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:29:23:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:31:48:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:42:02:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:47:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:55:41:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 11:56:20:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:01:47:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:07:24:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:09:40:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:13:37:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:14:07:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:21:05:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:21:27:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:22:22:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:23:09:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:29:24:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:32:38:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/8/15 12:33:12:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/9/7 16:13:58:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/7 16:22:28:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/7 16:46:38:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/7 17:36:44:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 9:12:55:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 9:20:57:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 9:33:44:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 9:37:26:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 13:53:32:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 15:10:40:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/8 18:16:48:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:07:57:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:10:06:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:15:16:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:43:46:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:53:57:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 17:58:34:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/9 21:13:39:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/10 14:52:07:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/10 15:05:26:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/10 15:07:03:ProcUpdate():无法解析此远程名称: 'www.maticsoft.com'
+2010/9/11 22:59:28:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/9/11 23:26:25:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/9/11 23:26:51:错误信息：
+
+未能找到文件“D:\ltp\MyProject\Codematic2\CodeMatic\bin\Debug\ddddd”。
+
+System.IO.FileNotFoundException
+
+Stack Trace:
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   在 System.IO.StreamReader..ctor(String path)
+   在 Codematic.CodeExport.btnInputTxt_Click(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\Tool\CodeExport.cs:行号 2010
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2010/9/11 23:27:43:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/9/11 23:30:04:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010-9-19 16:34:40:ProcUpdate():The request failed with HTTP status 405: Method Not Allowed.
+2010/10/3 15:50:00:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 18:04:38:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 18:39:54:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 18:48:25:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 18:57:28:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 18:59:15:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 19:02:54:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 21:02:27:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 21:17:46:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 21:19:21:
+错误信息：RPC 服务器不可用。 (异常来自 HRESULT:0x800706BA)
+Stack Trace:   在 Microsoft.Office.Interop.Word.Range.set_Text(String prop)
+   在 Codematic.SearchTables.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2-0927\CodeMatic\Tool\SearchTables.cs:行号 336
+
+2010/10/3 21:21:17:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/10/3 21:23:50:
+错误信息：RPC 服务器不可用。 (异常来自 HRESULT:0x800706BA)
+Stack Trace:   在 Microsoft.Office.Interop.Word.Cell.get_Range()
+   在 Codematic.SearchTables.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2-0927\CodeMatic\Tool\SearchTables.cs:行号 337
+
+2010/10/3 21:24:56:
+错误信息：远程过程调用失败。 (异常来自 HRESULT:0x800706BE)
+Stack Trace:   在 Microsoft.Office.Interop.Word.Range.set_Text(String prop)
+   在 Codematic.SearchTables.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2-0927\CodeMatic\Tool\SearchTables.cs:行号 339
+
+2010/10/3 21:37:44:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010-10-09 22:06:52:ProcUpdate():The request failed with HTTP status 405: Method Not Allowed.
+2010-10-09 22:11:25:ProcUpdate():The request failed with HTTP status 405: Method Not Allowed.
+2010-10-09 22:12:48:ProcUpdate():The request failed with HTTP status 405: Method Not Allowed.
+2010-10-09 22:44:01:ProcUpdate():The request failed with HTTP status 405: Method Not Allowed.
+2010/11/23 20:47:51:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/11/23 21:14:13:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/11/23 21:14:35:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Codematic.LoginForm.GetSQLVer(String connectionString) 位置 D:\ltp\Codematic2\CodeMatic\LoginForm.cs:行号 397
+
+2010/11/23 21:14:35:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为已关闭。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 LTP.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 D:\ltp\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 LTP.DbObjects.SQL2008.DbObject.GetDBList() 位置 D:\ltp\Codematic2\DbObject\SQL2008\DbObject.cs:行号 258
+   在 Codematic.LoginForm.btn_ConTest_Click(Object sender, EventArgs e) 位置 D:\ltp\Codematic2\CodeMatic\LoginForm.cs:行号 689
+
+2010/11/23 21:23:36:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/11/23 21:24:19:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Codematic.LoginForm.GetSQLVer(String connectionString) 位置 D:\ltp\Codematic2\CodeMatic\LoginForm.cs:行号 397
+
+2010/11/23 21:24:44:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为已关闭。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 LTP.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 D:\ltp\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 LTP.DbObjects.SQL2008.DbObject.GetDBList() 位置 D:\ltp\Codematic2\DbObject\SQL2008\DbObject.cs:行号 258
+   在 Codematic.LoginForm.btn_ConTest_Click(Object sender, EventArgs e) 位置 D:\ltp\Codematic2\CodeMatic\LoginForm.cs:行号 689
+
+2010/11/23 21:27:29:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:01:55:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:03:21:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:30:44:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:31:06:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:34:18:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 12:35:46:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/2 13:16:41:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 0:18:25:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 0:19:32:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 0:19:46:错误信息：
+
+长度不能小于 0。
+参数名: length
+
+System.ArgumentOutOfRangeException
+
+Stack Trace:
+   在 System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\Codematic2\CmConfig\DbConfig.cs:行号 657
+   在 Codematic.UserControls.UcCSSet.LoadServerConfig(String servername) 位置 D:\ltp\Codematic2\CodeMatic\UserControls\UcCSSet.cs:行号 93
+   在 Codematic.UserControls.UcCSSet.cmboxServers_SelectedIndexChanged(Object sender, EventArgs e) 位置 D:\ltp\Codematic2\CodeMatic\UserControls\UcCSSet.cs:行号 87
+   在 System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.WmReflectCommand(Message& m)
+   在 System.Windows.Forms.ComboBox.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2010/12/14 0:20:09:错误信息：
+
+长度不能小于 0。
+参数名: length
+
+System.ArgumentOutOfRangeException
+
+Stack Trace:
+   在 System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\Codematic2\CmConfig\DbConfig.cs:行号 657
+   在 Codematic.UserControls.UcCSSet.LoadServerConfig(String servername) 位置 D:\ltp\Codematic2\CodeMatic\UserControls\UcCSSet.cs:行号 93
+   在 Codematic.UserControls.UcCSSet.cmboxServers_SelectedIndexChanged(Object sender, EventArgs e) 位置 D:\ltp\Codematic2\CodeMatic\UserControls\UcCSSet.cs:行号 87
+   在 System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.WmReflectCommand(Message& m)
+   在 System.Windows.Forms.ComboBox.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2010/12/14 0:20:49:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 0:33:35:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 0:37:04:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 15:49:41:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 16:06:59:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2010/12/14 16:52:26:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/1/21 18:38:06:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 15:58:27:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 15:59:46:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 16:00:00:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1917
+
+2011/2/13 16:00:08:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 17:07:28:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 17:20:54:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 17:27:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 17:39:31:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 17:46:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 18:04:02:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 18:11:44:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 18:13:35:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 18:25:58:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 21:24:12:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 21:48:12:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 21:48:27:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 21:51:07:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 22:17:05:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 22:43:05:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 22:51:54:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 22:54:19:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 22:59:03:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:01:59:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:02:38:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:03:04:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:03:47:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:04:38:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:05:22:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:06:15:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:09:24:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:13:20:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:13:58:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/2/13 23:27:27:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:08:41:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:16:26:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:16:41:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:30:08:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:41:47:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:44:04:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:44:12:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:44:15:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:44:20:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:44:26:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:44:33:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:48:33:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:51:02:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:51:21:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.CmConfig.DbConfig.GetSetting(String loneServername) 位置 D:\ltp\MyProject\Codematic2\CmConfig\DbConfig.cs:行号 656
+   在 Codematic.CodeMaker.SetFormConfig(String servername) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 112
+   在 Codematic.CodeMaker.SetListView(DbView dbviewfrm) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 415
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 323
+
+2011/3/1 15:55:02:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/1 15:57:32:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/2 11:42:31:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/2 11:49:36:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/2 11:54:17:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/2 12:00:56:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/7 17:28:25:错误信息：
+
+Load language file fail:未能找到文件“D:\ltp\MyProject\Codematic2\CodeMatic\bin\Debug\language\zh-cn\BuilderFrameOne.lan”。
+
+System.Exception
+
+Stack Trace:
+   在 LTP.CodeHelper.Language.LoadFromCfg(String filename) 位置 D:\ltp\MyProject\Codematic2\CodeHelper\Language.cs:行号 71
+   在 LTP.CodeBuild.BuilderFrameOne.get_Languagelist() 位置 D:\ltp\MyProject\Codematic2\CodeBuild\BuilderFrameOne.cs:行号 64
+   在 LTP.CodeBuild.BuilderFrameOne.CreatConstructorSQL() 位置 D:\ltp\MyProject\Codematic2\CodeBuild\BuilderFrameOne.cs:行号 589
+   在 LTP.CodeBuild.BuilderFrameOne.GetCode(String DALtype, Boolean Maxid, Boolean Exists, Boolean Add, Boolean Update, Boolean Delete, Boolean GetModel, Boolean List, String procPrefix) 位置 D:\ltp\MyProject\Codematic2\CodeBuild\BuilderFrameOne.cs:行号 199
+   在 Codematic.CodeMaker.CreatCsOne() 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 916
+   在 Codematic.CodeMaker.CreatCS() 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 885
+   在 Codematic.CodeMaker.btn_Ok_Click(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 785
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/3/11 13:51:31:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/11 13:58:02:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/11 15:15:07:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/11 15:22:54:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/11 16:48:52:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/11 16:59:39:ProcUpdate():请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/3/19 12:22:09:错误信息：
+
+ExecuteReader 要求已打开且可用的连接。连接的当前状态为正在连接。
+
+System.InvalidOperationException
+
+Stack Trace:
+   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 LTP.DbObjects.SQL2005.DbObject.ExecuteReader(String DbName, String strSQL) 位置 D:\ltp\MyProject\Codematic2\DbObject\SQL2005\DbObject.cs:行号 176
+   在 LTP.DbObjects.SQL2005.DbObject.GetTables(String DbName) 位置 D:\ltp\MyProject\Codematic2\DbObject\SQL2005\DbObject.cs:行号 283
+   在 Codematic.NewProjectDB.cmbDB_SelectedIndexChanged(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\NewProjectDB.cs:行号 630
+   在 System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 Codematic.NewProjectDB.NewProjectDB_Load(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\NewProjectDB.cs:行号 560
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/3/19 12:22:25:错误信息：
+
+此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+
+System.InvalidOperationException
+
+Stack Trace:
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync()
+   在 Codematic.DbView.连接服务器Item_Click(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 1108
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/3/19 12:23:43:错误信息：
+
+此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+
+System.InvalidOperationException
+
+Stack Trace:
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync()
+   在 Codematic.DbView.连接服务器Item_Click(Object sender, EventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 1108
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/3/19 12:23:43:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 LTP.DbObjects.SQL2005.DbObject.Query(String DbName, String SQLString) 位置 D:\ltp\MyProject\Codematic2\DbObject\SQL2005\DbObject.cs:行号 166
+   在 LTP.DbObjects.SQL2005.DbObject.GetTabViews(String DbName) 位置 D:\ltp\MyProject\Codematic2\DbObject\SQL2005\DbObject.cs:行号 391
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 D:\ltp\MyProject\Codematic2\CodeMatic\DbView.cs:行号 2608
+
+2011/3/31 22:25:28:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1927
+
+2011/3/31 23:26:00:
+错误信息：列“COLUMN_POSITION”不属于表 Columns。
+Stack Trace:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 589
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 528
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/3/31 23:26:14:
+错误信息：列“COLUMN_POSITION”不属于表 Columns。
+Stack Trace:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 589
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 528
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/3/31 23:27:16:
+错误信息：列“COLUMN_POSITION”不属于表 Columns。
+Stack Trace:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 589
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 528
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/4/1 19:09:38:
+错误信息：字符串的长度不能为零。
+参数名: oldValue
+Stack Trace:   在 System.String.Replace(String oldValue, String newValue)
+   在 Codematic.NewProjectDB.CopyDirectory(String SourceDirectory, String TargetDirectory) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 980
+   在 Codematic.NewProjectDB.CopyDirectory(String SourceDirectory, String TargetDirectory) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1015
+   在 Codematic.NewProjectDB.btn_Export_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 913
+
+2011/4/1 19:10:33:
+错误信息：字符串的长度不能为零。
+参数名: oldValue
+Stack Trace:   在 System.String.Replace(String oldValue, String newValue)
+   在 Codematic.NewProjectDB.CopyDirectory(String SourceDirectory, String TargetDirectory) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 980
+   在 Codematic.NewProjectDB.CopyDirectory(String SourceDirectory, String TargetDirectory) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1015
+   在 Codematic.NewProjectDB.btn_Export_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 913
+
+2011/4/5 10:12:00:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1927
+
+2011/4/11 10:47:25:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1927
+
+2011/4/11 10:48:41:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1927
+
+2011/4/11 10:49:46:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/4/11 10:50:10:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/4/11 10:51:39:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2853
+
+2011/4/11 10:51:58:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1313
+
+2011/4/11 10:52:33:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1313
+
+2011/4/11 10:54:04:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1313
+
+2011/4/11 10:56:05:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1313
+
+2011/4/11 10:57:38:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 LTP.DbObjects.OleDb.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 615
+   在 LTP.DbObjects.OleDb.DbObject.GetColumnList(String DbName, String TableName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\OleDb\DbObject.cs:行号 529
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1313
+
+2011/4/12 15:30:41:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 LTP.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 LTP.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 391
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2636
+
+2011/4/26 0:53:32:错误信息：
+
+未能找到文件“E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\bin\Debug\Template\新文件夹\新建模板.cmt”。
+
+System.IO.FileNotFoundException
+
+Stack Trace:
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.File.Move(String sourceFileName, String destFileName)
+   在 Codematic.TempView.treeView1_AfterLabelEdit(Object sender, NodeLabelEditEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\TempView.cs:行号 607
+   在 System.Windows.Forms.TreeView.OnAfterLabelEdit(NodeLabelEditEventArgs e)
+   在 System.Windows.Forms.TreeView.TvnEndLabelEdit(NMTVDISPINFO nmtvdi)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/4/28 12:18:43:错误信息：
+
+此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+
+System.InvalidOperationException
+
+Stack Trace:
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync()
+   在 Codematic.DbView.连接服务器Item_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1108
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/4/28 12:18:47:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为正在连接。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTables(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 283
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1300
+
+2011/4/28 12:18:48:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为正在连接。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 162
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetVIEWs(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 338
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1341
+
+2011/4/28 12:18:49:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为正在连接。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 162
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetProcs(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 436
+   在 Codematic.DbView.刷新dbItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 1382
+
+2011/4/28 12:18:53:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 391
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2636
+
+2011/4/28 12:18:53:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 391
+   在 Codematic.MainForm.toolComboBox_DB_SelectedIndexChanged(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\MainForm.cs:行号 1648
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ToolStripComboBox.HandleSelectedIndexChanged(Object sender, EventArgs e)
+   在 System.Windows.Forms.ComboBox.OnSelectedIndexChanged(EventArgs e)
+   在 System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   在 System.Windows.Forms.ComboBox.set_Text(String value)
+   在 System.Windows.Forms.ToolStripControlHost.set_Text(String value)
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 377
+
+2011/4/28 12:19:34:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 391
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2636
+
+2011/4/29 21:54:15:错误信息：
+
+Load DatatypeMap file fail:未将对象引用设置到对象的实例。
+
+System.Exception
+
+Stack Trace:
+   在 Maticsoft.CmConfig.DatatypeMap.LoadFromCfg(String filename, String TypeName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CmConfig\DatatypeMap.cs:行号 32
+   在 Codematic.OptionFrm.OptionFrm_Load(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\OptionFrm.cs:行号 57
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/4/30 0:49:48:错误信息：
+
+Load DatatypeMap file fail:未将对象引用设置到对象的实例。
+
+System.Exception
+
+Stack Trace:
+   在 Maticsoft.CmConfig.DatatypeMap.LoadFromCfg(XmlDocument doc, String filename, String TypeName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CmConfig\DatatypeMap.cs:行号 29
+   在 Codematic.UserControls.UcDatatypeMap.LoadData() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\UserControls\UcDatatypeMap.cs:行号 128
+   在 Codematic.UserControls.UcDatatypeMap..ctor() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\UserControls\UcDatatypeMap.cs:行号 21
+   在 Codematic.OptionFrm..ctor(MainForm mainform) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\OptionFrm.cs:行号 41
+   在 Codematic.MainForm.选项OToolStripMenuItem_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\MainForm.cs:行号 1256
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/4/30 1:09:12:错误信息：
+
+Save DatatypeMap file fail:此文档已具有“DocumentElement”节点。
+
+System.Exception
+
+Stack Trace:
+   在 Codematic.UserControls.UcDatatypeMap.SaveData() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\UserControls\UcDatatypeMap.cs:行号 269
+   在 Codematic.OptionFrm.btn_Ok_Click(Object sender, EventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\OptionFrm.cs:行号 272
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/5/24 17:54:50:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 3068
+
+2011/5/24 17:54:55:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.ConnectServer(TreeNode serverNode, String dbtype, String ServerIp, String DbName, Boolean ConnectSimple, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 3068
+
+2011/5/25 9:52:31:Check Version Error:基础连接已经关闭: 接收时发生错误。
+2011/5/30 12:49:11:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.CreatTree(String dbtype, String ServerIp, String constr, String Dbname, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2195
+   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2062
+
+2011/5/30 12:51:07:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.CreatTree(String dbtype, String ServerIp, String constr, String Dbname, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2195
+   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2062
+
+2011/5/30 12:54:37:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.CreatTree(String dbtype, String ServerIp, String constr, String Dbname, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2195
+   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2062
+
+2011/5/30 12:54:55:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.CreatTree(String dbtype, String ServerIp, String constr, String Dbname, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2195
+   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2062
+
+2011/5/30 13:11:49:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Codematic.DbView.CreatTree(String dbtype, String ServerIp, String constr, String Dbname, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2195
+   在 Codematic.DbView.LoginServerOledb(DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2062
+
+2011/5/30 13:19:42:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Maticsoft.CodeBuild.BuilderFrameS3..ctor(IDbObject idbobj, String dbName, String tableName, String tableDescription, String modelName, String bllName, String dalName, List`1 fieldlist, List`1 keys, String nameSpace, String folder, String dbHelperName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeBuild\BuilderFrameS3.cs:行号 69
+   在 Maticsoft.CodeBuild.CodeBuilders.GetCodeFrameS3Model() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeBuild\CodeBuilders.cs:行号 337
+   在 Codematic.NewProjectDB.CreatCsS3p() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1535
+   在 Codematic.NewProjectDB.CreatCS() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1172
+   在 Codematic.NewProjectDB.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1098
+
+2011/5/30 13:25:35:
+错误信息：未将对象引用设置到对象的实例。
+Stack Trace:   在 Maticsoft.CodeBuild.BuilderFrameS3..ctor(IDbObject idbobj, String dbName, String tableName, String tableDescription, String modelName, String bllName, String dalName, List`1 fieldlist, List`1 keys, String nameSpace, String folder, String dbHelperName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeBuild\BuilderFrameS3.cs:行号 69
+   在 Maticsoft.CodeBuild.CodeBuilders.GetCodeFrameS3Model() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeBuild\CodeBuilders.cs:行号 337
+   在 Codematic.NewProjectDB.CreatCsS3p() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1535
+   在 Codematic.NewProjectDB.CreatCS() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1172
+   在 Codematic.NewProjectDB.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1098
+
+2011/5/30 13:37:54:
+错误信息：给定编码中的字符无效。 行 128，位置 23。
+Stack Trace:   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   在 System.Xml.XmlTextReaderImpl.Throw(Int32 pos, String res)
+   在 System.Xml.XmlTextReaderImpl.InvalidCharRecovery(Int32& bytesCount, Int32& charsCount)
+   在 System.Xml.XmlTextReaderImpl.GetChars(Int32 maxCharsCount)
+   在 System.Xml.XmlTextReaderImpl.ReadData()
+   在 System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow(Int32 curPos, Char quoteChar, NodeData attr)
+   在 System.Xml.XmlTextReaderImpl.ParseAttributes()
+   在 System.Xml.XmlTextReaderImpl.ParseElement()
+   在 System.Xml.XmlTextReaderImpl.ParseElementContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   在 System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 Maticsoft.Utility.VSProject.AddClass(String filename, String classname) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\Utility\VSProject.cs:行号 24
+   在 Codematic.NewProjectDB.AddClassFile(String ProjectFile, String classFileName, String ProType) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 2265
+   在 Codematic.NewProjectDB.CreatCsS3p() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1537
+   在 Codematic.NewProjectDB.CreatCS() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1172
+   在 Codematic.NewProjectDB.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1098
+
+2011/5/30 13:42:59:
+错误信息：给定编码中的字符无效。 行 128，位置 23。
+Stack Trace:   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   在 System.Xml.XmlTextReaderImpl.Throw(Int32 pos, String res)
+   在 System.Xml.XmlTextReaderImpl.InvalidCharRecovery(Int32& bytesCount, Int32& charsCount)
+   在 System.Xml.XmlTextReaderImpl.GetChars(Int32 maxCharsCount)
+   在 System.Xml.XmlTextReaderImpl.ReadData()
+   在 System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow(Int32 curPos, Char quoteChar, NodeData attr)
+   在 System.Xml.XmlTextReaderImpl.ParseAttributes()
+   在 System.Xml.XmlTextReaderImpl.ParseElement()
+   在 System.Xml.XmlTextReaderImpl.ParseElementContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   在 System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 Maticsoft.Utility.VSProject.AddClass(String filename, String classname) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\Utility\VSProject.cs:行号 24
+   在 Codematic.NewProjectDB.AddClassFile(String ProjectFile, String classFileName, String ProType) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 2265
+   在 Codematic.NewProjectDB.CreatCsS3p() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1537
+   在 Codematic.NewProjectDB.CreatCS() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1172
+   在 Codematic.NewProjectDB.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1098
+
+2011/5/30 13:43:20:
+错误信息：给定编码中的字符无效。 行 102，位置 25。
+Stack Trace:   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   在 System.Xml.XmlTextReaderImpl.Throw(Int32 pos, String res)
+   在 System.Xml.XmlTextReaderImpl.InvalidCharRecovery(Int32& bytesCount, Int32& charsCount)
+   在 System.Xml.XmlTextReaderImpl.GetChars(Int32 maxCharsCount)
+   在 System.Xml.XmlTextReaderImpl.ReadData()
+   在 System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow(Int32 curPos, Char quoteChar, NodeData attr)
+   在 System.Xml.XmlTextReaderImpl.ParseAttributes()
+   在 System.Xml.XmlTextReaderImpl.ParseElement()
+   在 System.Xml.XmlTextReaderImpl.ParseElementContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   在 System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 Maticsoft.Utility.VSProject.AddClass(String filename, String classname) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\Utility\VSProject.cs:行号 24
+   在 Codematic.NewProjectDB.AddClassFile(String ProjectFile, String classFileName, String ProType) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 2265
+   在 Codematic.NewProjectDB.CreatCsS3() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1227
+   在 Codematic.NewProjectDB.CreatCS() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1169
+   在 Codematic.NewProjectDB.ThreadWork() 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\NewProjectDB.cs:行号 1098
+
+2011/5/31 16:22:50:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/5/31 16:25:51:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 18:47:01:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 18:49:00:
+错误信息：值不能为空。
+参数名: value
+Stack Trace:   在 System.Globalization.CompareInfo.IndexOf(String source, String value, Int32 startIndex, Int32 count, CompareOptions options)
+   在 System.Globalization.CompareInfo.IndexOf(String source, String value)
+   在 System.String.IndexOf(String value)
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 3001
+
+2011/6/18 18:49:47:
+错误信息：值不能为空。
+参数名: value
+Stack Trace:   在 System.Globalization.CompareInfo.IndexOf(String source, String value, Int32 startIndex, Int32 count, CompareOptions options)
+   在 System.Globalization.CompareInfo.IndexOf(String source, String value)
+   在 System.String.IndexOf(String value)
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 3001
+
+2011/6/18 18:50:07:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 18:51:29:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 18:57:56:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 19:07:57:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 19:10:43:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/18 19:11:36:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 10:57:50:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 10:59:14:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:03:03:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:13:37:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:30:44:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:38:03:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:39:23:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/6/19 11:41:18:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/10 12:10:10:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/10 12:10:23:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 419
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\MyProject\Maticsoft\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2784
+
+2011/7/10 12:15:30:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/10 12:41:31:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/10 12:44:48:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/10 12:49:08:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/16 15:33:50:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/18 23:03:38:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/18 23:04:48:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Codematic.LoginForm.GetSQLVer(String connectionString) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\LoginForm.cs:行号 434
+
+2011/7/18 23:04:48:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为已关闭。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetDBList() 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 258
+   在 Codematic.LoginForm.btn_ConTest_Click(Object sender, EventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\LoginForm.cs:行号 765
+
+2011/7/18 23:10:10:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/18 23:12:41:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/18 23:27:23:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/18 23:32:05:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/20 23:23:48:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/20 23:24:45:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/20 23:35:20:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/30 14:07:09:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/30 14:10:15:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/30 14:12:08:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:11:10:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:14:10:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:19:01:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:20:37:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:29:21:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:31:56:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:34:27:未将对象引用设置到对象的实例。
+2011/7/31 10:34:32:未将对象引用设置到对象的实例。
+2011/7/31 10:35:29:未将对象引用设置到对象的实例。
+2011/7/31 10:36:33:未将对象引用设置到对象的实例。
+2011/7/31 10:37:49:未将对象引用设置到对象的实例。
+2011/7/31 10:37:58:未将对象引用设置到对象的实例。
+2011/7/31 10:38:29:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 10:39:04:未将对象引用设置到对象的实例。
+2011/7/31 11:39:36:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 15:25:33:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 15:25:48:
+错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 419
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 2837
+
+2011/7/31 15:26:18:
+错误信息：'fkTab' 附近有语法错误。
+关键字 'ELSE' 附近有语法错误。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 996
+   在 Codematic.DbBrowser.BindlistViewCol(String Dbname, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 307
+   在 Codematic.DbBrowser.SetListView(DbView dbviewfrm) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 100
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 365
+
+2011/7/31 15:26:59:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 15:27:08:
+错误信息：列名 'max_length' 无效。
+列名 'max_length' 无效。
+列名 'max_length' 无效。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 996
+   在 Codematic.DbBrowser.BindlistViewCol(String Dbname, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 307
+   在 Codematic.DbBrowser.SetListView(DbView dbviewfrm) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 100
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 365
+
+2011/7/31 15:27:13:
+错误信息：列名 'max_length' 无效。
+列名 'max_length' 无效。
+列名 'max_length' 无效。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2008.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 176
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetColumnInfoList(String DbName, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 996
+   在 Codematic.DbBrowser.BindlistViewCol(String Dbname, String TableName) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 307
+   在 Codematic.DbBrowser.SetListView(DbView dbviewfrm) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbBrowser.cs:行号 100
+   在 Codematic.DbView.treeView1_AfterSelect(Object sender, TreeViewEventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\DbView.cs:行号 365
+
+2011/7/31 15:28:46:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 15:33:56:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 15:40:42:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 16:32:53:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/7/31 16:33:08:
+错误信息：不能使用 'd:\test.accdb'；文件已在使用中。
+Stack Trace:   在 System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   在 System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OleDb.OleDbConnection.Open()
+   在 Codematic.LoginOledb.btn_Ok_Click(Object sender, EventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\LoginOledb.cs:行号 393
+
+2011/8/1 23:48:23:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/13 17:22:49:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/13 18:42:59:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/14 22:45:12:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/14 22:46:10:
+错误信息：未能找到路径“C:\CodematicDemo\简单三层模板\Model.cmt.cs”的一部分。
+Stack Trace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   在 System.IO.File.WriteAllText(String path, String contents, Encoding encoding)
+   在 Codematic.TemplateBatch.ThreadWork() 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\Tool\TemplateBatch.cs:行号 727
+Source: mscorlib
+
+2011/8/14 22:51:42:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/16 22:30:05:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/8/16 22:36:14:
+错误信息：列名 'CompanyId' 无效。
+列名 'LItemId' 无效。
+列名 'LParentId' 无效。
+列名 'cCusAccount' 无效。
+列名 'cCusRegCode' 无效。
+列名 'cCusPerson' 无效。
+列名 'cCusTel' 无效。
+列名 'Ldetail' 无效。
+列名 'isParent' 无效。
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabDataBySQL(String DbName, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbObject.cs:行号 1241
+   在 Maticsoft.DbObjects.SQL2008.DbScriptBuilder.CreateTabScriptBySQL(String dbname, String strSQL) 位置 E:\动软卓越\Codematic2\Codematic2\DbObject\SQL2008\DbScriptBuilder.cs:行号 523
+   在 Codematic.DbQuery.miMakeCurrentQuerySQL_Click(Object sender, EventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\DbQuery.cs:行号 630
+Source: Maticsoft.DbObjects
+
+2011/8/16 22:44:40:Check Version Error:请求因 HTTP 状态 405 失败: Method Not Allowed。
+2011/11/26 14:17:27:错误信息：
+
+Load language file fail:已添加项。字典中的关键字:“summaryDeletelist”所添加的关键字:“summaryDeletelist”
+
+System.Exception
+
+Stack Trace:
+   在 Maticsoft.CodeHelper.Language.LoadFromCfg(String filename) 位置 E:\动软卓越\Codematic2\Codematic2\CodeHelper\Language.cs:行号 71
+   在 Maticsoft.BuilderDALELParam.BuilderDAL.get_Languagelist() 位置 E:\动软卓越\Codematic2\Codematic2\Builder\BuilderDALELParam\BuilderDAL.cs:行号 198
+   在 Maticsoft.BuilderDALELParam.BuilderDAL.GetDALCode(Boolean Maxid, Boolean Exists, Boolean Add, Boolean Update, Boolean Delete, Boolean GetModel, Boolean List) 位置 E:\动软卓越\Codematic2\Codematic2\Builder\BuilderDALELParam\BuilderDAL.cs:行号 382
+   在 Maticsoft.CodeBuild.BuilderFrameS3.GetDALCode(String AssemblyGuid, Boolean Maxid, Boolean Exists, Boolean Add, Boolean Update, Boolean Delete, Boolean GetModel, Boolean List, String procPrefix) 位置 E:\动软卓越\Codematic2\Codematic2\CodeBuild\BuilderFrameS3.cs:行号 220
+   在 Codematic.CodeMaker.CreatCsS3DAL() 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 1035
+   在 Codematic.CodeMaker.CreatCsS3() 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 987
+   在 Codematic.CodeMaker.CreatCS() 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 944
+   在 Codematic.CodeMaker.btn_Ok_Click(Object sender, EventArgs e) 位置 E:\动软卓越\Codematic2\Codematic2\CodeMatic\TabPages\CodeMaker.cs:行号 840
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/11/26 14:17:37:未将对象引用设置到对象的实例。
+2011/11/26 14:19:07:未将对象引用设置到对象的实例。
+2011/11/26 14:20:01:未将对象引用设置到对象的实例。
+2011/11/30 15:54:42:
+错误信息：无法打开登录所请求的数据库 "ReportServer"。登录失败。
+用户 'sa' 登录失败。
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 419
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\公司项目\动软代码生成器\Codematic2\CodeMatic\DbView.cs:行号 2837
+Source: Maticsoft.DbObjects
+
+2011/12/8 17:59:48:错误信息：
+
+创建窗口句柄时出错。
+
+System.ComponentModel.Win32Exception
+
+Stack Trace:
+   在 System.Windows.Forms.NativeWindow.CreateHandle(CreateParams cp)
+   在 System.Windows.Forms.Control.CreateHandle()
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.WmPaint(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   在 System.Windows.Forms.UserControl.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+2011/12/8 18:28:46:
+错误信息：无法打开登录所请求的数据库 "Codematic"。登录失败。
+用户 'sa' 登录失败。
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 419
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\公司项目\动软代码生成器\Codematic2\CodeMatic\DbView.cs:行号 2854
+Source: Maticsoft.DbObjects
+
+2011/12/9 10:09:47:
+错误信息：无法打开登录所请求的数据库 "AuNew"。登录失败。
+用户 'sa' 登录失败。
+Stack Trace:   在 Maticsoft.DbObjects.SQL2008.DbObject.Query(String DbName, String SQLString) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 166
+   在 Maticsoft.DbObjects.SQL2008.DbObject.GetTabViews(String DbName) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2008\DbObject.cs:行号 419
+   在 Codematic.DbView.ConnectServer(TreeNode serverNode, DbSettings dbset, DoWorkEventArgs e) 位置 E:\公司项目\动软代码生成器\Codematic2\CodeMatic\DbView.cs:行号 2854
+Source: Maticsoft.DbObjects
+
+2011/12/9 14:15:28:
+错误信息：Login failed for user 'hd67143'.
+Stack Trace:   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Codematic.LoginForm.GetSQLVer(String connectionString) 位置 E:\公司项目\动软代码生成器\Codematic2\CodeMatic\LoginForm.cs:行号 434
+Source: .Net SqlClient Data Provider
+
+2011/12/9 14:15:28:
+错误信息：ExecuteReader 要求已打开且可用的连接。连接的当前状态为已关闭。
+Stack Trace:   在 System.Data.SqlClient.SqlConnection.GetOpenConnection(String method)
+   在 System.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 Maticsoft.DbObjects.SQL2000.DbObject.ExecuteReader(String DbName, String strSQL) 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2000\DbObject.cs:行号 177
+   在 Maticsoft.DbObjects.SQL2000.DbObject.GetDBList() 位置 E:\公司项目\动软代码生成器\Codematic2\DbObject\SQL2000\DbObject.cs:行号 258
+   在 Codematic.LoginForm.btn_ConTest_Click(Object sender, EventArgs e) 位置 E:\公司项目\动软代码生成器\Codematic2\CodeMatic\LoginForm.cs:行号 770
+Source: System.Data
+
+2011/12/9 15:35:55:未将对象引用设置到对象的实例。
+2011/12/9 15:36:14:未将对象引用设置到对象的实例。
+2011/12/9 16:02:56:未将对象引用设置到对象的实例。

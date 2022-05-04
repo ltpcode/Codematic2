@@ -1,0 +1,139 @@
+@import url( extra.css );
+A {
+	COLOR: #818181
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #ffffff; BACKGROUND: #fff; MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #3874c8; SCROLLBAR-SHADOW-COLOR: #3874c8; COLOR: #818181; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #3874c8; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 9pt; COLOR: #818181; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+TD A:link {
+	TEXT-DECORATION: none
+}
+TD A:visited {
+	TEXT-DECORATION: none
+}
+TD A:active {
+	TEXT-DECORATION: none
+}
+TD A:hover {
+	TEXT-DECORATION: none
+}
+.nemo {
+	BORDER-RIGHT: darkgray 1px solid; BORDER-TOP: darkgray 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: darkgray 1px solid; COLOR: #000000; BORDER-BOTTOM: darkgray 1px solid; FONT-FAMILY: ""; BACKGROUND-COLOR: #ffffff
+}
+.nemo01 {
+	BORDER-RIGHT: #c5c5c5 1px solid; BORDER-TOP: #c5c5c5 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #c5c5c5 1px solid; COLOR: #2d2d2d; BORDER-BOTTOM: #c5c5c5 1px solid; FONT-FAMILY: ""; BACKGROUND-COLOR: #f7f7f7
+}
+.s_m01 A:link {
+	COLOR: #1fa6c1; TEXT-DECORATION: none
+}
+.s_m01 A:visited {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+.s_m01 A:hover {
+	COLOR: #1fa6c1; TEXT-DECORATION: underline
+}
+.s_m01_b A:link {
+	FONT-WEIGHT: bold; COLOR: #1fa6c1; TEXT-DECORATION: none
+}
+.s_m01_b A:visited {
+	FONT-WEIGHT: bold; COLOR: #1fa6c1; TEXT-DECORATION: none
+}
+.s_m01_b A:hover {
+	FONT-WEIGHT: bold; COLOR: #1fa6c1; TEXT-DECORATION: underline
+}
+.s_m01_c {
+	FONT-WEIGHT: bold; COLOR: #1fa6c1
+}
+.s_m03 A:link {
+	COLOR: #fc7492; TEXT-DECORATION: none
+}
+.s_m03 A:visited {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+.s_m03 A:hover {
+	COLOR: #fc7492; TEXT-DECORATION: underline
+}
+.s_m03_c {
+	FONT-WEIGHT: bold; COLOR: #fc7492
+}
+.s_m04 A:link {
+	COLOR: #3b8704; TEXT-DECORATION: none
+}
+.s_m04 A:visited {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+.s_m04 A:hover {
+	COLOR: #3b8704; TEXT-DECORATION: underline
+}
+.s_m04_b A:link {
+	FONT-WEIGHT: bold; COLOR: #3b8704; TEXT-DECORATION: none
+}
+.s_m04_b A:visited {
+	FONT-WEIGHT: bold; COLOR: #3b8704; TEXT-DECORATION: none
+}
+.s_m04_b A:hover {
+	FONT-WEIGHT: bold; COLOR: #3b8704; TEXT-DECORATION: underline
+}
+.s_m04_c {
+	FONT-WEIGHT: bold; COLOR: #3b8704
+}
+.s_m05 A:link {
+	COLOR: #ec840a; TEXT-DECORATION: none
+}
+.s_m05 A:visited {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+.s_m05 A:hover {
+	COLOR: #ec840a; TEXT-DECORATION: underline
+}
+.s_m05_b A:link {
+	FONT-WEIGHT: bold; COLOR: #ec840a; TEXT-DECORATION: none
+}
+.s_m05_b A:visited {
+	FONT-WEIGHT: bold; COLOR: #ec840a; TEXT-DECORATION: none
+}
+.s_m05_b A:hover {
+	FONT-WEIGHT: bold; COLOR: #ec840a; TEXT-DECORATION: underline
+}
+.s_m05_c {
+	FONT-WEIGHT: bold; COLOR: #ec840a
+}
+#dek {
+	Z-INDEX: 200; VISIBILITY: hidden; POSITION: absolute
+}
+.orange {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ff6600; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+.color01 {
+	COLOR: #f6710f
+}
+.gray_1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #333333; FONT-FAMILY: 
+}
+.gray {
+	FONT-SIZE: 9pt; COLOR: #333333; FONT-FAMILY: 
+}
+.sms {
+	BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: hidden; WIDTH: 100px; BORDER-BOTTOM: 0px; FONT-FAMILY: u; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 84px
+}
+.sms_new {
+	BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: hidden; WIDTH: 100px; CURSOR: hand; COLOR: #818181; BORDER-BOTTOM: 0px; FONT-FAMILY: u; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 74px
+}
+.sms_vam {
+	BORDER-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 9pt; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: hidden; WIDTH: 110px; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: 0px; FONT-FAMILY: u; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 74px
+}
+.sms_comm {
+	BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: hidden; WIDTH: 100px; COLOR: #ffffff; BORDER-BOTTOM: 0px; FONT-FAMILY: u; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 74px
+}
+TEXTAREA.content {
+	BORDER-RIGHT: #c9c9c9 1px solid; BORDER-TOP: #c9c9c9 1px solid; OVERFLOW-Y: auto; SCROLLBAR-FACE-COLOR: #ffffff; FONT-SIZE: 9pt; BACKGROUND-IMAGE: url(http://www.clickbell.com/ebiz/images/icon/textline.gif); SCROLLBAR-HIGHLIGHT-COLOR: #c9c9c9; BORDER-LEFT: #c9c9c9 1px solid; SCROLLBAR-SHADOW-COLOR: #c9c9c9; COLOR: #666666; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 15pt; SCROLLBAR-TRACK-COLOR: #ffffff; BORDER-BOTTOM: #c9c9c9 1px solid; FONT-FAMILY: "µ¸¿ò"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+.color01 {
+	COLOR: #f6710f
+}
+.color02 {
+	COLOR: #027ba3
+}

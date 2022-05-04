@@ -1,0 +1,2954 @@
+<!--
+Copyright (c) 2000-2002 Microsoft Corp. All rights reserved.
+Version 1.0.2.226
+-->
+
+<public:component tagname=treeview literalcontent=true>
+<public:attach event=oncontentready onevent="oncontentready()" />
+<public:attach event=ondocumentready onevent="ondocumentready()" />
+<public:attach event="onscroll" onevent="onScroll()" />
+<public:event name="onexpand" id="_tvevtExpand" />
+<public:event name="oncollapse" id="_tvevtCollapse" />
+<public:event name="onselectedindexchange" id="_tvevtSelect" />
+<public:event name="oncheck" id="_tvevtCheck" />
+<public:event name="onfirequeuedevents" id="_tvevtFireQueuedEvents" />
+<public:event name="onnodebound" id="_tvevtNodeBound" />
+<public:event name="onnodetypesbound" id="_tvevtNodeTypesBound" />
+<public:event name="onhover" id="_tvevtHover" />
+<public:event name="onunhover" id="_tvevtUnhover" />
+<public:property name="clickedNodeIndex" GET="getClickedNodeIndex" />
+<public:property name="defaultStyle" id="_tvpropDefaultStyle" GET="getDefaultStyle" PUT="setDefaultStyle" />
+<public:property name="hoverStyle" id="_tvpropHoverStyle" GET="getHoverStyle" PUT="setHoverStyle" />
+<public:property name="selectedStyle" id="_tvpropSelectedStyle" GET="getSelectedStyle" PUT="setSelectedStyle" />
+<public:property name="childType" id="_tvpropChildType" GET="getChildType" PUT="setChildType" />
+<public:property name="imageUrl" id="_tvpropImageUrl" GET="getImageUrl" PUT="setImageUrl" />
+<public:property name="expandedImageUrl" id="_tvpropExpandedImageUrl" GET="getExpandedImageUrl" PUT="setExpandedImageUrl" />
+<public:property name="selectedImageUrl" id="_tvpropSelectedImageUrl" GET="getSelectedImageUrl" PUT="setSelectedImageUrl" />
+<public:property name="target" id="_tvpropTarget" GET="getTarget" PUT="setTarget" />
+<public:property name="treeNodeSrc" id="_tvpropTreeNodeSrc" GET="getTreeNodeSrc" PUT="setTreeNodeSrc" />
+<public:property name="treeNodeXsltSrc" id="_tvpropTreeNodeXsltSrc" GET="getTreeNodeXsltSrc" PUT="setTreeNodeXsltSrc" />
+<public:property name="selectExpands" id="_tvpropSelectExpands" GET="getSelectExpands" PUT="setSelectExpands" />
+<public:property name="expandLevel" id="_tvpropExpandLevel" GET="getExpandLevel" PUT="setExpandLevel" />
+<public:property name="autoSelect" id="_tvpropAutoSelect" GET="getAutoSelect" PUT="setAutoSelect" />
+<public:property name="treeNodeTypeSrc" id="_tvpropTreeNodeTypeSrc" GET="getTreeNodeTypeSrc" PUT="setTreeNodeTypeSrc" />
+<public:property name="showLines" id="_tvpropShowLines" GET="getShowLines" PUT="setShowLines" />
+<public:property name="showPlus" id="_tvpropShowPlus" GET="getShowPlus" PUT="setShowPlus" />
+<public:property name="showToolTip" id="_tvpropShowToolTip" GET="getShowToolTip" PUT="setShowToolTip" />
+<public:property name="indent" id="_tvpropIndent" GET="getIndent" PUT="setIndent" />
+<public:property name="selectedNodeIndex" id="_tvpropSelectedNodeIndex" GET="getSelectedNodeIndex" PUT="setSelectedNodeIndex" />
+<public:property name="systemImagesPath" id="_tvpropSystemImagesPath" GET="getSystemImagesPath" PUT="setSystemImagesPath" />
+<public:method name="queueEvent" />
+<public:method name="getTreeNode" />
+<public:method name="addAt" />
+<public:method name="createTreeNode" />
+<public:method name="getTreeNodeType" />
+<public:method name="createTreeNodeType" />
+<public:method name="addTreeNodeType" />
+<public:method name="add" />
+<public:method name="databind" />
+<public:method name="databindTypes" />
+<public:method name="getChildren" />
+</public:component>
+<script language=javascript>
+var contentNode;
+var treeviewNode;
+var g_typesNode;
+var g_styles;
+var g_event;
+var g_timer = -1;
+var g_nodeClicked = null;
+var g_strQueuedEvents = "";
+var g_bInteractive = false;
+var g_numStop = 0;
+var g_selectedNodeBeforeDelay = "";
+var g_bFocus = false;
+var g_bCreated = false;
+var g_typeIsland = null;
+var g_bNodesReady = false;
+var g_bTypesReady = false;
+var g_bMouseDown = false;
+var g_pendingBinds = new Array(0);
+var g_pendingSyncBinds = new Array(0);
+var g_bindTimer = -1;
+var g_bLock = false;
+var g_bInTypesBoundEvent = false;
+var L_strMSXMLError_Text = "Error creating MSXML object.  Please make sure the MSXML library is installed on your computer.";
+var L_strRetrievingNodes_Text = "Retrieving nodes...";
+var L_strXMLError_Text = "Error loading XML file %s";
+var L_strInvalidXML_Text = "Invalid XML in %s";
+var L_strXSLTError_Text = " or unsupported XSLT in %s";
+var L_fontSize_Text = "10pt";
+var L_fontName_Text = "Times";
+var L_strToolTip_Text = "Use +/- to expand/collapse";
+var prop_defaultStyle = null;
+var prop_hoverStyle = null;
+var prop_selectedStyle = null;
+var prop_childType = null;
+var prop_imageUrl = null;
+var prop_expandedImageUrl = null;
+var prop_selectedImageUrl = null;
+var prop_target = null;
+var prop_treeNodeSrc = null;
+var prop_treeNodeXsltSrc = null;
+var prop_selectExpands = null;
+var prop_expandLevel = -1;
+var prop_autoSelect = false;
+var prop_treeNodeTypeSrc = null;
+var prop_showLines = true;
+var prop_showPlus = true;
+var prop_showToolTip = true;
+var prop_indent = 19;
+var prop_selectedNodeIndex = null;
+var prop_systemImagesPath = null;
+function queueEvent(strEvent, strParams)
+{
+if (g_strQueuedEvents.length > 0)
+g_strQueuedEvents += ";";
+g_strQueuedEvents += (strEvent + "," + strParams);
+setHiddenHelperValue();
+}
+function getQueuedEvents()
+{
+return g_strQueuedEvents;
+}
+function fireQueuedEvents()
+{
+if (g_strQueuedEvents != "")
+{
+if (getAttribute("onfirequeuedevents") != null)
+{
+if (g_timer != -1)
+{
+window.clearTimeout(g_timer);
+autoSelect();
+}
+else
+{
+g_bInteractive = false;
+g_numStop = 0;
+_tvevtFireQueuedEvents.fire();
+}
+}
+}
+}
+function SetAnchorClass(node, name)
+{
+var strStyle = "";
+var lname = name.toLowerCase();
+strStyle += cascadeStyle(getParentTreeNode(node), "defaultstyle");
+if (lname != "defaultstyle")
+{
+var str = cascadeStyle(getParentTreeNode(node), lname);
+if (str != null)
+{
+strStyle += ";" + str;
+}
+}
+node.style.cssText = strStyle;
+if (lname == "hoverstyle" && g_bFocus == false)
+blurFilter(node);
+node.className = lname;
+}
+function getParentTreeNode(node)
+{
+var el = node;
+while (el != null && el.getAttribute("treenode") == null)
+el = el.parentElement;
+return el.getAttribute("treenode");
+}
+function HoverNode(textnode)
+{
+var node;
+if (textnode.tagName.toLowerCase() == "treenode")
+node = textnode.subtree.all.item("_tntext", 0);
+else
+node = textnode;
+var nodeIndex = getNodeIndex(getParentTreeNode(node));
+if (node.className == "defaultstyle")
+{
+SetAnchorClass(node, "hoverstyle");
+HoverNodeIndex = nodeIndex;
+}
+else if (node.className != "hoverstyle")
+HoverNodeIndex = "";
+e = element.document.createEventObject();
+e.treeNodeIndex = nodeIndex;
+_tvevtHover.fire(e);
+setHiddenHelperValue();
+}
+function UnhoverNode(textnode)
+{
+if (textnode != null)
+{
+var node;
+if (textnode.tagName.toLowerCase() == "treenode")
+node = textnode.subtree.all.item("_tntext", 0);
+else
+node = textnode;
+if (node.className == "hoverstyle")
+{
+SetAnchorClass(node, "defaultstyle");
+}
+e = element.document.createEventObject(event);
+if (HoverNodeIndex == "")
+e.treeNodeIndex = getNodeIndex(getParentTreeNode(node))
+else
+e.treeNodeIndex = HoverNodeIndex;
+_tvevtUnhover.fire(e);
+HoverNodeIndex = "";
+setHiddenHelperValue();
+}
+}
+function mOver()
+{
+if (g_bInteractive == true)
+{
+var oItem = this.all.item("_tntext", 0);
+if (HoverNodeIndex.length > 0)
+UnhoverNode(getNodeFromIndex(HoverNodeIndex));
+HoverNode(oItem);
+}
+}
+function mOut()
+{
+if (g_bInteractive == true)
+{
+var node = this.parentElement.treenode;
+var nodeIndex = getNodeIndex(node)
+if (nodeIndex == HoverNodeIndex)
+{
+UnhoverNode(node);
+window.status = window.defaultStatus;
+}
+else if (nodeIndex == selectedNodeIndex)
+{
+e = element.document.createEventObject(event);
+e.treeNodeIndex = nodeIndex;
+_tvevtUnhover.fire(e);
+}
+}
+}
+function onkeydown()
+{
+if (!g_bInteractive)
+return;
+if (event.altKey == true)
+return;
+var oldNode;
+var hoverNode = null;
+if (HoverNodeIndex.length > 0)
+{
+oldNode = getNodeFromIndex(HoverNodeIndex);
+hoverNode = oldNode;
+}
+else
+oldNode = getNodeFromIndex(selectedNodeIndex);
+switch (event.keyCode)
+{
+case 187:
+if (event.shiftKey != true)
+break;
+case 107:
+if (oldNode.getAttribute("expanded") != true)
+{
+doNodePlusMinusClick(oldNode);
+fireQueuedEvents();
+}
+event.returnValue = false;
+break;
+case 189:
+if (event.shiftKey == true)
+break;
+case 109:
+if (oldNode.getAttribute("expanded") == true)
+{
+doNodePlusMinusClick(oldNode);
+fireQueuedEvents();
+}
+event.returnValue = false;
+break;
+case 39:
+event.returnValue = false;
+if (oldNode.children.tags("treenode").length == 0)
+{
+var exp = getNodeAttribute(oldNode, "expandable");
+if (exp == null && oldNode.getAttribute("TreeNodeSrc") != null)
+exp = "checkOnce";
+if (oldNode.getAttribute("expanded") == true || !(exp == "always" || (exp == "checkOnce" && oldNode.getAttribute("checkedExpandable") != true)))
+break;
+}
+if (oldNode.getAttribute("expanded") != true)
+{
+doNodePlusMinusClick(oldNode);
+updateStatus(oldNode);
+fireQueuedEvents();
+break;
+}
+case 40:
+var node = getNextVisibleNode(oldNode);
+if (node != null)
+{
+if (element.getAttribute("autoselect") == true)
+{
+selectNode(node, true);
+updateStatus(node);
+UnhoverNode(hoverNode);
+}
+else
+{
+UnhoverNode(oldNode);
+HoverNode(node);
+changeFocus(node, oldNode);
+updateStatus(node);
+}
+scrollTree(node);
+}
+event.returnValue = false;
+break;
+case 37:
+if (oldNode.getAttribute("expanded") == true)
+{
+doNodePlusMinusClick(oldNode);
+fireQueuedEvents();
+}
+else
+{
+var node = oldNode.parentElement;
+while (node.tagName.substr(0,4).toLowerCase() != "tree")
+node = node.parentElement;
+if (node.tagName.toLowerCase() == "treenode")
+{
+if (element.getAttribute("autoselect") == true)
+{
+selectNode(node, true);
+updateStatus(node);
+UnhoverNode(hoverNode);
+}
+else
+{
+UnhoverNode(oldNode);
+HoverNode(node);
+changeFocus(node, oldNode);
+updateStatus(node);
+}
+scrollTree(node);
+}
+}
+event.returnValue = false;
+break;
+case 38:
+var node = getPreviousVisibleNode(oldNode);
+if (node != null)
+{
+if (element.getAttribute("autoselect") == true)
+{
+selectNode(node, true);
+updateStatus(node);
+UnhoverNode(hoverNode);
+}
+else
+{
+UnhoverNode(oldNode);
+HoverNode(node);
+changeFocus(node, oldNode);
+updateStatus(node);
+}
+scrollTree(node);
+}
+event.returnValue = false;
+break;
+case 32:
+var cb = oldNode.subtree.all.item("_cb", 0);
+if (cb != null)
+{
+cb.setAttribute("checked", !cb.getAttribute("checked"), 0);
+doCheckboxClick(oldNode);
+fireQueuedEvents();
+}
+event.returnValue = false;
+break;
+case 13:
+doNodeClick(oldNode)
+if (!navigateNode(oldNode))
+{
+if (element.getAttribute("selectExpands") == true)
+doNodePlusMinusClick(oldNode);
+fireQueuedEvents();
+}
+event.returnValue = false;
+break;
+}
+}
+function changeFocus(node, oldNode)
+{
+var accessnode = node.subtree.all.item("_tnaccess", 0);
+accessnode.tabindex = 1;
+accessnode.focus();
+accessnode = oldNode.subtree.all.item("_tnaccess", 0);
+accessnode.tabindex = -1;
+}
+function updateStatus(node)
+{
+var href = node.getAttribute("navigateurl");
+if (href != null)
+window.status = href;
+else
+window.status = window.defaultStatus;
+}
+function onstop()
+{
+g_numStop++;
+if (g_numStop >= 2)
+{
+g_bInteractive = true;
+}
+for (var i = 0; i < g_pendingBinds.length; i++)
+{
+if (g_pendingBinds[i] != null && g_pendingBinds[i].el != null)
+g_pendingBinds[i].el._bound = null;
+}
+}
+function onfocus()
+{
+if (!g_bFocus)
+{
+dofocus();
+}
+}
+function dofocus()
+{
+var node = null;
+g_bFocus = true;
+try
+{
+node = getNodeFromIndex(selectedNodeIndex);
+}
+catch (e)
+{
+}
+if (node != null)
+{
+var oItem = node.subtree.all.item("_tnaccess", 0);
+if (oItem != null)
+{
+if (g_bInteractive)
+{
+focusFilter(oItem);
+oItem.tabIndex = 1;
+if (!g_bMouseDown)
+{
+try
+{
+var prevScrollTop = element.scrollTop;
+var prevScrollLeft = element.scrollLeft;
+oItem.focus();
+element.scrollTop = prevScrollTop;
+element.scrollLeft = prevScrollLeft;
+}
+catch (e)
+{
+}
+}
+}
+}
+}
+node = null;
+try
+{
+node = getNodeFromIndex(HoverNodeIndex);
+}
+catch (e)
+{
+}
+if (node != null && g_bInteractive)
+{
+var oItem = node.subtree.all.item("_tnaccess", 0);
+if (oItem != null)
+focusFilter(oItem);
+}
+}
+function focusFilter(oItem)
+{
+if (oItem.id == "_tnaccess")
+oItem = oItem.all.item("_tntext", 0);
+if (oItem.filters.length > 0)
+{
+var oFilter = oItem.filters.item("DXImageTransform.Microsoft.Alpha");
+if (oFilter)
+{
+oFilter.opacity *= 2;
+}
+}
+}
+function onblur()
+{
+var node = null;
+g_bFocus = false;
+try
+{
+node = getNodeFromIndex(selectedNodeIndex);
+}
+catch (e)
+{
+}
+if (node != null)
+{
+var oItem = node.subtree.all.item("_tnaccess", 0);
+if (oItem != null)
+{
+blurFilter(oItem);
+oItem.tabIndex = -1;
+}
+}
+node = null;
+try
+{
+node = getNodeFromIndex(HoverNodeIndex);
+}
+catch (e)
+{
+}
+if (node != null)
+{
+var oItem = node.subtree.all.item("_tnaccess", 0);
+if (oItem != null)
+{
+blurFilter(oItem);
+oItem.tabIndex = -1;
+}
+}
+setHiddenHelperValue();
+}
+function blurFilter(oItem)
+{
+if (oItem.id == "_tnaccess")
+oItem = oItem.all.item("_tntext", 0);
+if (oItem.filters.length > 0)
+{
+var oFilter = oItem.filters.item("DXImageTransform.Microsoft.Alpha");
+if (oFilter)
+{
+oFilter.opacity /= 2;
+return;
+}
+}
+oItem.style.filter += "progid:DXImageTransform.Microsoft.Alpha(opacity=50,style=0)";
+}
+function oncontentready()
+{
+if (element.document.parentWindow.name.indexOf("__hifSmartNav") == 0)
+return;
+g_styles = new Object();
+var strFont = "font: " + L_fontSize_Text + " " + L_fontName_Text + "; ";
+g_styles["parent"] = strFont + "text-decoration: none; color: black; overflow:hidden;";
+g_styles["child"] = strFont + "overflow:hidden;";
+g_styles["defaultstyle"] = strFont + "display:inline-block; color: black; text-decoration:none; cursor: hand; overflow:hidden;";
+g_styles["hoverstyle"] = "color: highlighttext; background-color:highlight; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50,style=0);";
+g_styles["selectedstyle"] = "color: highlighttext; background-color:highlight;";
+g_styles["icon"] = "cursor:hand;";
+if (element.style.overflowX == "");
+element.style.overflowX = "auto";
+verifyBooleanAttribute(element, "showPlus");
+if (element.getAttribute("showPlus") == false && element.getAttribute("selectExpands") == null)
+element.setAttribute("selectExpands", true, 0);
+verifyBooleanAttribute(element, "selectExpands");
+verifyBooleanAttribute(element, "autoSelect");
+verifyBooleanAttribute(element, "showLines");
+verifyBooleanAttribute(element, "showToolTip");
+var systemImagesPath = element.getAttribute("SystemImagesPath");
+if (systemImagesPath == null)
+element.setAttribute("SystemImagesPath", "treeimages/", 0);
+else if (systemImagesPath.charAt(systemImagesPath.length - 1) != '/')
+element.setAttribute("SystemImagesPath", systemImagesPath + '/', 0);
+if (isRtl())
+{
+element.setAttribute("SystemImagesPath", element.getAttribute("SystemImagesPath") + "rtl/", 0);
+}
+contentNode = element.document.createElement("treeview");
+contentNode.innerHTML = element.innerHTML;
+element.tabIndex=0;
+element.attachEvent("onkeydown", onkeydown);
+element.attachEvent("onfocus", onfocus);
+element.attachEvent("onblur", onblur);
+f_AddStopEvent();
+element.hideFocus = true;
+if (element.getAttribute("selectedNodeIndex") == null)
+prop_selectedNodeIndex = "";
+if (element.getAttribute("HoverNodeIndex") == null)
+element.setAttribute("HoverNodeIndex", "", 0);
+if (element.getAttribute("TreeNodeTypeSrc") == null)
+{
+element.nodeTypes = contentNode.children.tags("TREENODETYPE");
+verifyTypeValues();
+g_bTypesReady = true;
+}
+else
+databindTypes();
+if (treeNodeSrc != null)
+{
+if (element.nodeTypes != null)
+{
+contentNode.innerHTML = getNodeTypeHtml();
+element.nodeTypes = contentNode.children.tags("TREENODETYPE");
+}
+else
+contentNode.innerHTML = "";
+databindNode(element);
+}
+else
+{
+g_bNodesReady = true;
+tryToBuildTreeFromRoot();
+}
+}
+function ondocumentready()
+{
+if (element.document.parentWindow.name.indexOf("__hifSmartNav") == 0)
+return;
+f_CleanupEvents();
+g_strQueuedEvents = "";
+if (HoverNodeIndex.length > 0)
+HoverNode(getNodeFromIndex(HoverNodeIndex));
+g_bInteractive = true;
+if (element.getAttribute("Focused") != null)
+dofocus();
+else
+onblur();
+var newScrollTop = element.getAttribute("__scrollTop");
+var newScrollLeft = element.getAttribute("__scrollLeft");
+if (newScrollTop != null)
+element.scrollTop = newScrollTop;
+if (newScrollLeft != null)
+element.scrollLeft = newScrollLeft;
+var parent = element.offsetParent;
+if (parent != null)
+{
+var newParentTop = element.getAttribute("__parentTop");
+var newParentLeft = element.getAttribute("__parentLeft");
+if (newParentTop != null)
+parent.scrollTop = newParentTop;
+if (newParentLeft != null)
+parent.scrollLeft = newParentLeft;
+}
+if (getNodeFromIndex(selectedNodeIndex) == null)
+{
+if (getNodeFromIndex("0") != null)
+selectedNodeIndex = "0";
+else
+selectedNodeIndex = "";
+}
+}
+function changeIcon(node, imageUrl)
+{
+var icon1;
+var imageUrlLC = imageUrl.toLowerCase();
+var textnode = node.subtree.all("_tntext", 0);
+var accessnode = node.subtree.all("_tnaccess", 0);
+var spacer = accessnode.previousSibling;
+if (spacer != null)
+{
+icon1 = spacer.previousSibling;
+if (icon1 != null && icon1.id != "_nodeicon")
+icon1 = null;
+}
+else
+icon1 = null;
+var newSrc = getNodeAttribute(node, imageUrlLC);
+if (newSrc != null && icon1 == null)
+{
+icon1 = node.document.createElement("<IMG align='absmiddle' border='0' class='icon' id='_nodeicon' >");
+icon1.src = newSrc;
+accessnode.parentElement.insertBefore(icon1, accessnode);
+spacer = node.document.createElement("<SPAN>");
+spacer.style.width = 5;
+accessnode.parentElement.insertBefore(spacer, accessnode);
+}
+else if (newSrc != null)
+{
+icon1.src = newSrc;
+icon1.style.display = "inline";
+}
+else if (imageUrlLC == "imageurl")
+{
+if (icon1 != null)
+{
+icon1.style.display = "none";
+}
+}
+else if (imageUrlLC == "selectedimageurl" && node.getAttribute("expanded") == true)
+changeIcon(node, "expandedimageurl");
+else
+changeIcon(node, "imageurl");
+if (icon1 != null)
+{
+icon1.style.cursor = textnode.style.cursor;
+spacer.style.cursor = textnode.style.cursor;
+}
+}
+function selectNode(node, delay)
+{
+var nodeIndex;
+var selectedNode = null;
+var strImage;
+var oItem;
+var oOldItem = null;
+if (node && node.subtree == null)
+node = getNodeFromIndex("0");
+nodeIndex = getNodeIndex(node);
+if (selectedNodeIndex != nodeIndex)
+{
+if (selectedNodeIndex != "" && selectedNodeIndex != null)
+{
+selectedNode = getNodeFromIndex(selectedNodeIndex);
+if (selectedNode != null && selectedNode.subtree != null)
+{
+oOldItem = selectedNode.subtree.all.item("_tntext", 0);
+SetAnchorClass(oOldItem, "defaultstyle");
+oOldItem.parentElement.tabIndex = -1;
+if (selectedNode.getAttribute("expanded") == true)
+strImage = "ExpandedImageUrl";
+else
+strImage = "ImageUrl";
+changeIcon(selectedNode, strImage);
+}
+}
+if (node)
+{
+oItem = node.subtree.all.item("_tntext", 0);
+applySelection(node, oItem);
+}
+if (selectedNodeIndex.length > 0)
+{
+g_event = createEventObject();
+g_event.newTreeNodeIndex = nodeIndex;
+g_event.oldTreeNodeIndex = selectedNodeIndex;
+prop_selectedNodeIndex = nodeIndex;
+if (delay != true)
+_tvevtSelect.fire(g_event);
+else
+{
+if (g_timer != -1)
+window.clearTimeout(g_timer);
+g_timer = window.setTimeout(autoSelect, 500, "JScript");
+if (g_selectedNodeBeforeDelay == "")
+g_selectedNodeBeforeDelay = g_event.oldTreeNodeIndex;
+}
+}
+else
+prop_selectedNodeIndex = nodeIndex;
+if (!g_bFocus && g_bInteractive)
+{
+if (oOldItem != null)
+focusFilter(oOldItem);
+}
+}
+setHiddenHelperValue();
+}
+function autoSelect()
+{
+g_timer = -1;
+if (selectedNodeIndex != g_selectedNodeBeforeDelay)
+{
+navigateNode(getNodeFromIndex(g_event.newTreeNodeIndex));
+_tvevtSelect.fire(g_event);
+fireQueuedEvents();
+}
+g_selectedNodeBeforeDelay = "";
+}
+function applySelection(node, oItem)
+{
+SetAnchorClass(oItem, "SelectedStyle");
+changeIcon(node, "SelectedImageUrl");
+scrollTree(node);
+if (selectedNodeIndex.length > 0)
+{
+if (g_bFocus)
+changeFocus(node, getNodeFromIndex(selectedNodeIndex));
+}
+if (!g_bFocus && g_bInteractive)
+{
+blurFilter(oItem);
+}
+}
+function reselectNode(el)
+{
+if (selectedNodeIndex == getNodeIndex(el))
+applySelection(el, el.subtree.all.item("_tntext", 0));
+}
+function tryToBuildTreeFromRoot()
+{
+if (g_bNodesReady == true && g_bTypesReady == true)
+{
+var bRebuilding = g_bCreated;
+buildTreeFromRoot();
+if (selectedNodeIndex.length == 0)
+{
+prop_selectedNodeIndex = "0";
+}
+var node = getNodeFromIndex(selectedNodeIndex);
+prop_selectedNodeIndex = "";
+selectNode(node);
+}
+}
+function buildTreeFromRoot()
+{
+treeviewNode = element.document.createElement("HTML");
+var bodyNode = element.document.createElement("BODY");
+bodyNode.dir = element.getAttribute("dir");
+bodyNode.style.direction = element.currentStyle.direction;
+var head = element.document.createElement("HEAD");
+var base = element.document.createElement("BASE");
+var path = null;
+if (window.location.pathname != null)
+{
+var lastslash = window.location.pathname.lastIndexOf("/");
+if (lastslash != -1)
+path = window.location.pathname.substr(0, lastslash + 1);
+else
+path = window.location.pathname;
+}
+var protocol = window.location.protocol.toLowerCase();
+base.href = window.location.protocol + (protocol != "mailto:" && protocol != "news:" ? "//" : "") + window.location.host + path;
+head.appendChild(base);
+treeviewNode.appendChild(head);
+var kids = contentNode.children.tags("treenode");
+if (kids[0] != undefined)
+{
+for (var i = 0; i < kids.length; i++)
+{
+kids[i].sibIndex = i;
+var subtree = buildTree(kids[i], 0);
+bodyNode.appendChild(subtree);
+}
+}
+treeviewNode.appendChild(bodyNode);
+treeviewNode.style.display = "block";
+treeviewNode.subtree = bodyNode;
+defaults.viewLink = treeviewNode.document;
+setHiddenHelperValue();
+g_bCreated = true;
+}
+function buildTree(root, level)
+{
+var display = true;
+if (root.subtree != null && root.subtree.style.display == "none")
+display = false;
+root.detachEvent("onclick", DefaultNodeOnClick);
+root.attachEvent("onclick", DefaultNodeOnClick);
+root.inheritedType = undefined;
+root.nodetypeIndex = undefined;
+var exp = makeBoolean(root.getAttribute("expanded"));
+if (exp == null)
+{
+if (level < element.getAttribute("ExpandLevel"))
+{
+root.setAttribute("expanded", true, 0);
+exp = true;
+}
+else
+exp = false;
+}
+if (!verifyBooleanAttribute(root, "expanded"))
+root.setAttribute("expanded", false, 0);
+if (!verifyBooleanAttribute(root, "checked"))
+root.setAttribute("checked", false);
+verifyBooleanAttribute(root, "checkBox");
+verifyBooleanAttribute(root, "checkedExpandable");
+if (root.getAttribute("type") != null)
+root.setAttribute("type", root.getAttribute("type").toLowerCase(), 0);
+if (root.getAttribute("childType") != null)
+root.setAttribute("childType", root.getAttribute("childType").toLowerCase(), 0);
+var collChildren = root.children.tags("treenode");
+var iChildren = collChildren.length;
+var expandable = getNodeAttribute(root, "expandable");
+if (expandable == null && root.getAttribute("TreeNodeSrc") != null)
+expandable = "checkOnce";
+if (root.getAttribute("_bound") != "binding")
+{
+var subtree = generateItem(root, iChildren > 0 || (expandable == "always" || (expandable == "checkOnce" && root.getAttribute("checkedExpandable") != true)) ? "parent" : "child");
+if (display == false)
+subtree.style.display = "none";
+if (exp == true && root.getAttribute("TreeNodeSrc") != null && root.getAttribute("_bound") != "complete")
+{
+root.setAttribute("expanded", true, 0);
+saveSubtree(root, subtree);
+databindNode(root);
+}
+else
+{
+if (root.getAttribute("expanded") == true)
+{
+for (var i = 0; i < iChildren; i++)
+{
+collChildren[i].sibIndex = i;
+var sub2 = buildTree(collChildren[i], level + 1);
+if (sub2 != undefined)
+subtree.appendChild(sub2);
+}
+}
+else
+{
+for (var i = 0; i < iChildren; i++)
+{
+if (collChildren[i].getAttribute("subtree") != null)
+collChildren[i].subtree = null;
+}
+}
+saveSubtree(root, subtree);
+}
+}
+return root.subtree;
+}
+function saveSubtree(el, subtree)
+{
+if (el.getAttribute("subtree") == null)
+el.subtree = subtree;
+else {
+el.subtree.replaceNode(subtree);
+el.subtree = subtree;
+}
+}
+function calcJunction(el)
+{
+var elParent = el.parentElement;
+var collChildren = elParent.children.tags("treenode");
+if (elParent.tagName == "treeview"  && collChildren[0] == el)
+{
+if (collChildren.length > 1)
+return ('F');
+else
+return ('R');
+}
+else
+{
+if (collChildren[collChildren.length - 1] == el)
+{
+return ('L');
+}
+else
+{
+return ('T');
+}
+}
+}
+function generateItem(el, nodeClass)
+{
+var image;
+var plusminusNode;
+var elAnchor;
+var expImgUrl = getNodeAttribute(el, "ExpandedImageUrl");
+var imgUrl = getNodeAttribute(el, "ImageUrl");
+var node = el.document.createElement("DIV");
+var cJunction;
+var junctionNode;
+var str;
+node.className = nodeClass;
+node.treenode = el;
+node.noWrap = true;
+node.style.display = "block";
+if (nodeClass == "child" && el.getAttribute("expanded") == true)
+el.setAttribute("expanded", false, 0);
+cJunction = calcJunction(el);
+junctionNode = generateJunctionNode(el, cJunction, nodeClass);
+node.appendChild(junctionNode);
+addLinesAndWhitespace(node, el, junctionNode);
+if (getNodeAttribute(el, "checkBox") == true)
+{
+var cb = createCheckBox(el);
+node.appendChild(cb);
+}
+elAnchor = el.document.createElement("<A>");
+elAnchor.onclick = nodePlusMinusClick;
+junctionNode.applyElement(elAnchor, "outside");
+elAnchor = el.document.createElement("<A tabindex=-1>");
+str = getNodeAttribute(el, "NavigateUrl");
+if (str != null && str != "")
+{
+elAnchor.href = str;
+}
+str = getNodeAttribute(el, "Target");
+if (str != null)
+elAnchor.target = str;
+var accessAnchor = elAnchor.cloneNode();
+accessAnchor.id = "_tnaccess";
+elAnchor.onclick = nodeClick;
+elAnchor.oncontextmenu = contextmenu;
+elAnchor.onmousedown = mousedown;
+elAnchor.onmouseup = mouseup;
+node.insertBefore(elAnchor);
+imageSrc = (nodeClass == "parent" && el.getAttribute("expanded") == true && expImgUrl != null ? expImgUrl : imgUrl);
+var spacer = null;
+if (imageSrc != null && imageSrc != undefined)
+{
+image = el.document.createElement("<IMG align='absmiddle' border='0' class='icon' id='_nodeicon'>");
+image.src = imageSrc;
+image.style.cssText = g_styles["icon"];
+elAnchor.appendChild(image);
+spacer = el.document.createElement("<SPAN>");
+spacer.style.width = 5;
+elAnchor.appendChild(spacer);
+}
+var textNode = generateTextNode(el);
+if (spacer != null)
+{
+spacer.style.cursor = textNode.style.cursor;
+image.style.cursor = textNode.style.cursor;
+}
+if (nodeClass == "parent" && element.getAttribute("showToolTip") != false)
+accessAnchor.title = textNode.innerText + " : " + L_strToolTip_Text;
+accessAnchor.appendChild(textNode);
+elAnchor.appendChild(accessAnchor);
+elAnchor.onmouseenter = mOver;
+elAnchor.onmouseleave = mOut;
+return node;
+}
+function createCheckBox(el)
+{
+var form = el.document.createElement("<FORM style='display:inline' name='_fcb'>");
+var bChecked = el.getAttribute("checked");
+var cb = el.document.createElement("<INPUT style='display:inline' tabindex=-1 type=checkbox name='_cb'" + (bChecked ? " checked " : " ") + "/>");
+cb.onclick = checkboxClick;
+form.appendChild(cb);
+return form;
+}
+function generateJunctionNode(el, cJunction, nodeClass)
+{
+var imageSrc;
+var junctionNode;
+var systemImagesPath = element.getAttribute("systemImagesPath");
+if (element.getAttribute("showLines") != false)
+{
+imageSrc = systemImagesPath;
+switch (cJunction)
+{
+case 'L':
+imageSrc += "L";
+break;
+case 'T':
+imageSrc += "T";
+break;
+case 'R':
+imageSrc += "R";
+break;
+case 'F':
+imageSrc += "F";
+break;
+default:
+return null;
+break;
+}
+if (nodeClass == "parent" && element.getAttribute("showPlus") != false )
+{
+if (el.getAttribute("expanded") == true)
+imageSrc += "minus.gif";
+else
+imageSrc +="plus.gif";
+}
+else
+imageSrc += ".gif";
+}
+else
+{
+if (nodeClass == "parent" && element.getAttribute("showPlus") != false)
+{
+if (el.getAttribute("expanded") == true)
+imageSrc = systemImagesPath + "minus.gif";
+else
+imageSrc = systemImagesPath + "plus.gif";
+}
+else
+{
+imageSrc = systemImagesPath + "white.gif";
+}
+}
+if (element.getAttribute("showLines") == false && element.getAttribute("showPlus") == false)
+junctionNode = element.document.createElement("<SPAN name='junction'>");
+else
+{
+junctionNode = element.document.createElement("<IMG align='absmiddle' border='0' class='icon' name='junction'>");
+junctionNode.src = imageSrc;
+}
+return junctionNode;
+}
+function addLinesAndWhitespace(node, el, junctionNode)
+{
+var elWalk = el.parentElement;
+var elInsertBefore = junctionNode;
+var systemImagesPath = element.getAttribute("systemImagesPath");
+if (element.getAttribute("showLines") != false)
+{
+while (elWalk && elWalk.tagName.toLowerCase() == "treenode")
+{
+var nextSib = elWalk.nextSibling;
+while (nextSib != null && nextSib.nodeType == 3)
+nextSib = nextSib.nextSibling;
+var imageSrc;
+var image;
+if (nextSib != null && nextSib.tagName.toLowerCase() == "treenode")
+imageSrc = systemImagesPath + "I.gif";
+else
+imageSrc = systemImagesPath + "white.gif";
+image = el.document.createElement("<IMG align='absmiddle' border='0'>");
+image.src = imageSrc;
+elInsertBefore = node.insertBefore(image, elInsertBefore);
+elWalk = elWalk.parentElement;
+}
+}
+else
+{
+var strIndex = getNodeIndex(el);
+if (strIndex.indexOf(".") != -1)
+{
+if (element.getAttribute("Indent") != null)
+{
+if (isRtl())
+node.style.marginRight = element.getAttribute("Indent");
+else
+node.style.marginLeft = element.getAttribute("Indent");
+}
+}
+}
+}
+function generateTextNode(el)
+{
+var textNode = el.document.createElement("<SPAN id=_tntext tabIndex=-1 style='display:inline; height=100%'>");
+if (el.getAttribute("Text") != null)
+{
+textNode.innerHTML = el.getAttribute("Text");
+}
+else
+{
+var iChild = 0;
+while (iChild < el.childNodes.length)
+{
+if (el.childNodes[iChild].nodeType == 3 || el.childNodes[iChild].tagName.toLowerCase() != "treenode")
+{
+var oClone = el.childNodes[iChild].cloneNode(true);
+textNode.appendChild(oClone);
+}
+iChild++;
+}
+}
+textNode.className = "defaultstyle";
+var defStyle = cascadeStyle(el, "defaultstyle");
+textNode.style.cssText = defStyle;
+return textNode;
+}
+function updateTree(el)
+{
+if (el.getAttribute("expanded") == true)
+{
+var i = 0;
+var coll = el.children.tags("treenode");
+var bRebuild = true;
+if (el.getAttribute("_buildChildren") != true && (coll.length > 0 && coll(0).getAttribute("subtree") != null))
+{
+bRebuild = false;
+for (var i = 0; i < coll.length; i++)
+{
+if (coll(i).subtree == null)
+{
+bRebuild = true;
+break;
+}
+coll(i).subtree.style.display = "block";
+}
+}
+if (bRebuild)
+{
+el.removeAttribute("_buildChildren");
+buildTree(el, getNodeLevel(el));
+reselectNode(el);
+if (HoverNodeIndex == getNodeIndex(el))
+HoverNode(el);
+}
+}
+else
+{
+var collChildren = el.children.tags("treenode");
+for (var i = 0; i < collChildren.length; i++)
+{
+collChildren(i).subtree.style.display = "none";
+}
+var index = getNodeIndex(el);
+if (selectedNodeIndex.length > index.length && selectedNodeIndex.substr(0,index.length) == index)
+{
+selectNode(el);
+}
+else if (selectedNodeIndex == index)
+changeIcon(el, "SelectedImageUrl");
+if (HoverNodeIndex.length >= index.length && HoverNodeIndex.substr(0, index.length) == index)
+{
+if (selectedNodeIndex != index)
+{
+if (HoverNodeIndex != index)
+{
+UnhoverNode(getNodeFromIndex(HoverNodeIndex));
+HoverNode(el);
+}
+}
+else
+UnhoverNode(getNodeFromIndex(HoverNodeIndex));
+}
+}
+setHiddenHelperValue();
+}
+function cascadeStyle(el, att)
+{
+var str = g_styles[att];
+var strStyle = element.getAttribute(att);
+if (strStyle != null)
+str = str + ";" + strStyle;
+strStyle = getNodeTypeAttribute(el, att);
+if (strStyle != null)
+str = str + ";" + strStyle;
+strStyle = el.getAttribute(att);
+if (strStyle != null)
+str = str + ";" + strStyle;
+return str;
+}
+function getNodeTypeAttribute(el, att)
+{
+var _nodetype = getNodeTypeObject(el);
+if (_nodetype != null)
+return _nodetype.getAttribute(att);
+return null;
+}
+function getNodeAttribute(el, att)
+{
+var strReturn;
+strReturn = el.getAttribute(att);
+if (strReturn != null)
+return strReturn;
+strReturn = getNodeTypeAttribute(el, att);
+if (strReturn != null)
+return strReturn;
+return element.getAttribute(att);
+}
+function navigateNode(el)
+{
+var url = getNodeAttribute(el, "NavigateUrl");
+if (url != null && url != "")
+{
+var target = getNodeAttribute(el, "Target");
+if (target == null || target == "_self")
+{
+window.open(url, "_self");
+return true;
+}
+else
+window.open(url, target);
+}
+return false;
+}
+function checkboxClick()
+{
+if (g_bInteractive == false)
+return;
+var el = this.parentElement.parentElement.treenode;
+event.cancelBubble = true;
+doCheckboxClick(el);
+fireQueuedEvents();
+}
+function doCheckboxClick(el)
+{
+el.checked = !el.checked;
+var evt = createEventObject();
+evt.treeNodeIndex = getNodeIndex(el);
+g_nodeClicked = el;
+_tvevtCheck.fire(evt);
+}
+function nodeClick()
+{
+if (g_bInteractive == false)
+return;
+var el = this.parentElement.treenode;
+if (doNodeClick(el) == true)
+{
+if (element.getAttribute("selectExpands") == true)
+doNodePlusMinusClick(el);
+fireQueuedEvents();
+}
+}
+function contextmenu()
+{
+event.cancelBubble = true;
+e = element.document.createEventObject(event);
+e.treeNodeIndex = getNodeIndex(this.parentElement.treenode);
+event.returnValue = element.fireEvent("oncontextmenu", e);
+}
+function mousedown()
+{
+if (event.button & 1)
+{
+g_bMouseDown = true;
+}
+}
+function mouseup()
+{
+g_bMouseDown = false;
+}
+function nodePlusMinusClick()
+{
+if (g_bInteractive == false)
+return;
+var el = this.parentElement.treenode;
+if (doNodePlusMinusClick(el) == true)
+fireQueuedEvents();
+}
+function doNodeClick(el)
+{
+if (g_bInteractive == false)
+return;
+g_nodeClicked = el;
+event.cancelBubble = true;
+el.fireEvent("onclick");
+element.fireEvent("onclick", event);
+if (getNodeAttribute(el, "NavigateUrl") != null)
+{
+var target = getNodeAttribute(el, "Target");
+if (target == null || target.toLowerCase() == "_self")
+return false;
+}
+selectNode(el);
+return true;
+}
+function doNodePlusMinusClick(el)
+{
+if (g_bInteractive == false)
+return false;
+event.cancelBubble = true;
+g_nodeClicked = el;
+if (el.getAttribute("expanded") == false && el.getAttribute("_bound") == null && el.getAttribute("TreeNodeSrc") != null)
+{
+el._isExpanding = true;
+private_databind(el);
+return true;
+}
+else
+return finishNodePlusMinusClick(el);
+}
+function finishNodePlusMinusClick(el)
+{
+var exp = getNodeAttribute(el, "expandable");
+if (exp == null && el.getAttribute("TreeNodeSrc") != null)
+exp = "checkOnce";
+if (el.children.tags("treenode").length > 0 || exp == "always" || (exp == "checkOnce" && el.getAttribute("checkedExpandable") != true))
+{
+var expanded = !el.getAttribute("expanded");
+el.setAttribute("expanded", expanded, 0);
+if (exp == "checkOnce")
+el.checkedExpandable = true;
+var evt = createEventObject();
+evt.treeNodeIndex = getNodeIndex(el);
+var eventToFire = changeJunctionImage(el);
+updateTree(el);
+doVisualRefresh();
+if (expanded == true && el.children.tags("treenode").length == 0 && element.getAttribute("onfirequeuedevents") != null)
+addStatusNode(el, L_strRetrievingNodes_Text);
+eventToFire.fire(evt);
+return true;
+}
+return false;
+}
+function changeJunctionImage(el)
+{
+var icon1 = el.subtree.all("junction",0);
+if (el.getAttribute("expanded") == true)
+{
+if (icon1 != null)
+icon1.src = icon1.src.replace(/plus/, "minus");
+if (selectedNodeIndex != getNodeIndex(el) || getNodeAttribute(el, "selectedimageurl") == null)
+changeIcon(el, "ExpandedImageUrl");
+return _tvevtExpand;
+}
+else
+{
+if (icon1 != null)
+icon1.src = icon1.src.replace(/minus/, "plus");
+if (selectedNodeIndex != getNodeIndex(el))
+changeIcon(el, "ImageUrl");
+return _tvevtCollapse;
+}
+}
+function DefaultNodeOnClick()
+{
+event.cancelBubble = true;
+}
+function getClickedNodeIndex()
+{
+if (g_nodeClicked != null)
+return getNodeIndex(g_nodeClicked);
+else
+return null;
+}
+function getNodeLevel(node)
+{
+var level = 0;
+while (node.parentElement.tagName.toLowerCase() == "treenode")
+{
+node = node.parentElement;
+level++;
+}
+return level;
+}
+function getNodeIndex(node)
+{
+var strIndex = "";
+if (node != null)
+{
+if (node.getAttribute("sibIndex") == null)
+{
+if (node.parentElement == null)
+{
+return null;
+}
+var col = node.parentElement.children.tags("treenode");
+var i = 0;
+while (col[i] != node)
+i++;
+node.sibIndex = i;
+}
+strIndex = node.sibIndex.toString();
+while (node.parentElement && node.parentElement.tagName.toLowerCase() == "treenode")
+{
+node = node.parentElement;
+if (node.getAttribute("sibIndex") == null)
+return null;
+strIndex = node.sibIndex + "." + strIndex;
+}
+}
+return strIndex;
+}
+function getNodeFromIndex(strIndex)
+{
+if (strIndex != null && strIndex != undefined && strIndex.length != 0)
+{
+var a = strIndex.split(".");
+var i = 0;
+var node = contentNode;
+while (i < a.length)
+{
+var coll = node.children.tags("treenode");
+if (coll == null || coll.length < (a[i] - 0) + 1)
+{
+return null;
+}
+node = coll.item(a[i++] - 0);
+}
+return node;
+}
+else
+{
+return null;
+}
+}
+function getNextVisibleNode(node)
+{
+var next = node;
+if (node.getAttribute("expanded") == true)
+{
+next = node.children[0];
+while (next != null && next != undefined && next.nodeName.toLowerCase() != "treenode")
+next = next.nextSibling;
+if (next)
+return next;
+}
+next = node.nextSibling;
+while (next != null && next != undefined && next.nodeName.toLowerCase() != "treenode")
+next = next.nextSibling;
+if (next != null)
+return next;
+next = node.parentElement;
+while ((next.nextSibling == null || next.nextSibling == undefined) && next.nodeName.toLowerCase() == "treenode")
+{
+next = next.parentElement;
+}
+if (next.nextSibling != null && next.nextSibling != undefined && next.nextSibling.nodeName.toLowerCase() == "treenode")
+return next.nextSibling;
+else
+return null;
+}
+function getPreviousVisibleNode(node)
+{
+var prev = node;
+prev = node.previousSibling;
+while (prev != null && prev != undefined && prev.nodeName.toLowerCase() != "treenode")
+prev = prev.previousSibling;
+if (prev)
+{
+if (prev.getAttribute("expanded") == true)
+{
+var lastChild = prev;
+while (lastChild != node && lastChild != null)
+{
+prev = lastChild;
+lastChild = getNextVisibleNode(prev);
+}
+}
+return prev;
+}
+if (node.parentElement.nodeName.toLowerCase() == "treenode")
+return node.parentElement;
+else
+return null;
+}
+function setHiddenHelperValue()
+{
+var id = element.HelperID;
+if (id == null)
+return;
+var helper = window.document.all(id);
+if (helper == null)
+return;
+var parentTop = -1;
+var parentLeft = -1;
+var parent = element.offsetParent;
+if (parent != null)
+{
+parentTop = parent.scrollTop;
+parentLeft = parent.scrollLeft;
+}
+helper.value = (g_bFocus ? "1" : "0") + "|" + HoverNodeIndex + "|" + element.scrollTop + "|" + element.scrollLeft + "|" + parentTop + "|" + parentLeft + "|" + g_strQueuedEvents;
+}
+function scrollTree(tnode)
+{
+var node = tnode.subtree.all.item("_tntext", 0);
+var top = node.offsetTop - element.scrollTop;
+if (top < 0)
+{
+element.scrollTop += top;
+}
+else
+{
+var bottom = top + node.offsetHeight;
+var elemHeight = element.clientHeight;
+if (bottom > elemHeight)
+{
+element.scrollTop += bottom - elemHeight;
+}
+}
+var rc = node.getBoundingClientRect();
+var elRc = element.getBoundingClientRect();
+if (g_bFocus)
+{
+if (elRc.top + rc.top < element.document.body.clientTop)
+node.scrollIntoView(true);
+else if (elRc.top + rc.bottom > element.document.body.clientHeight)
+node.scrollIntoView(false);
+}
+}
+function getInheritedType(el)
+{
+if (el.inheritedType === undefined || g_bInTypesBoundEvent)
+{
+var parentNode = el.parentElement;
+el.inheritedType = parentNode.getAttribute("childType");
+var tagname = parentNode.tagName.toLowerCase();
+if (el.inheritedType == null && tagname != "treeview")
+{
+var _parenttype = getNodeTypeObject(parentNode);
+if (_parenttype != null)
+{
+el.inheritedType = _parenttype.getAttribute("childType");
+}
+if (el.inheritedType == null && tagname == "treenode")
+{
+el.inheritedType = getInheritedType(parentNode);
+}
+}
+if (el.inheritedType == null)
+el.inheritedType = element.getAttribute("childType");
+}
+return el.inheritedType;
+}
+function getNodeTypeObject(el)
+{
+if (el.nodetypeIndex == undefined || g_bInTypesBoundEvent)
+{
+var theType = el.getAttribute("type");
+if (theType == null)
+theType = getInheritedType(el);
+if (theType == null)
+return null;
+theType = theType.toLowerCase();
+var i = 0;
+var len = element.nodeTypes.length;
+while (i < len)
+{
+if (element.nodeTypes[i].getAttribute("type") == theType)
+{
+el.nodetypeIndex = i;
+break;
+}
+i++;
+}
+}
+return element.nodeTypes[el.nodetypeIndex];
+}
+function replaceJunctionNode(node)
+{
+if (node.subtree == null)
+return;
+var oldNode = node.subtree.all("junction", 0);
+if (oldNode == null)
+return;
+var cJunction = calcJunction(node);
+var exp = node.getAttribute("Expandable");
+if (exp == null && node.getAttribute("TreeNodeSrc") != null)
+exp = "checkOnce";
+var bChildNodes = node.children.tags("treenode").length > 0;
+var junctionNode = generateJunctionNode(node, cJunction, bChildNodes || (exp == "always" || (exp == "checkOnce" && node.getAttribute("checkedExpandable") != true)) ? "parent" : "child");
+var accessNode = node.subtree.all("_tnaccess", 0);
+if (!bChildNodes)
+accessNode.title = "";
+else
+{
+var textNode = node.subtree.all("_tntext", 0);
+accessNode.title = textNode.innerText + " : " + L_strToolTip_Text;
+}
+oldNode.replaceNode(junctionNode);
+}
+function addStatusNode(el, str)
+{
+if (el.subtree != null && el.subtree.all.item("_fetch", 0) != null)
+return;
+var fetchNode =  el.document.createElement("<DIV id=_fetch>");
+var imageNode = el.document.createElement("<IMG align='absmiddle' border='0'>");
+imageNode.src = element.getAttribute("systemimagespath") + "white.gif";
+fetchNode.appendChild(imageNode);
+var junctionNode = generateJunctionNode(null, 'L', "child");
+fetchNode.appendChild(junctionNode);
+addLinesAndWhitespace(fetchNode, el == element ? contentNode : el, junctionNode);
+var textNode = el.document.createElement("<SPAN id=_tntext tabIndex=-1 style='display:inline; height=100%'>");
+textNode.innerText = str;
+textNode.className = "defaultstyle";
+var defStyle;
+if (el == element)
+defStyle = g_styles["defaultstyle"] + ";" + element.getAttribute("defaultstyle");
+else
+defStyle = cascadeStyle(el, "defaultstyle");
+textNode.style.cssText = defStyle;
+fetchNode.appendChild(textNode);
+if (el == element)
+{
+if (!g_bCreated)
+{
+fetchNode.style.display = "block";
+defaults.viewLink = fetchNode.document;
+}
+else
+{
+treeviewNode.appendChild(fetchNode);
+}
+}
+else
+{
+if (el.subtree != null)
+el.subtree.appendChild(fetchNode);
+}
+doVisualRefresh();
+}
+function databindNode(el)
+{
+var src = el.getAttribute("TreeNodeSrc");
+if (src == null)
+return;
+addStatusNode(el, L_strRetrievingNodes_Text);
+el._bound = "binding";
+var XsltSrc = el.getAttribute("TreeNodeXsltSrc");
+var databindInfo = new Object();
+databindInfo.el = el;
+databindInfo.transform = null;
+databindInfo.island = null;
+databindInfo.src = src;
+if (el == contentNode)
+g_bNodesReady = false;
+if (XsltSrc != null)
+{
+databindInfo.transform = element.document.all(XsltSrc);
+if (databindInfo.transform == null)
+{
+try
+{
+databindInfo.transform = new ActiveXObject("Msxml2.DOMDocument");
+}
+catch (e)
+{
+databindError(databindInfo, L_strMSXMLError_Text);
+return;
+}
+databindInfo.transform.async = false;
+if (!databindInfo.transform.loadXML(XsltSrc))
+databindInfo.transform.load(XsltSrc);
+}
+else
+databindInfo.transform = databindInfo.transform.XMLDocument;
+}
+databindInfo.island = element.document.all(src);
+if (databindInfo.island == null)
+{
+try
+{
+databindInfo.island = new ActiveXObject("Msxml2.DOMDocument");
+}
+catch (e)
+{
+databindError(databindInfo, L_strMSXMLError_Text);
+return;
+}
+databindInfo.island.async = false;
+g_pendingSyncBinds = g_pendingSyncBinds.concat(databindInfo);
+if (g_bindTimer == -1)
+g_bindTimer = window.setTimeout(syncBind, 10, "JScript");
+}
+else
+finishDatabindingNode(databindInfo, true);
+}
+function syncBind()
+{
+while (g_pendingSyncBinds.length > 0)
+{
+var databindInfo = g_pendingSyncBinds[0];
+g_pendingSyncBinds.splice(0, 1);
+if (!databindInfo.island.loadXML(databindInfo.src))
+{
+databindInfo.island.async = true;
+g_pendingBinds = g_pendingBinds.concat(databindInfo);
+databindInfo.island.onreadystatechange = finishDatabindingNodeHandler;
+databindInfo.island.load(databindInfo.src);
+}
+else
+finishDatabindingNode(databindInfo, true);
+}
+g_bindTimer = -1;
+}
+function finishDatabindingNodeHandler()
+{
+for (var i = 0; i < g_pendingBinds.length; i++)
+{
+if (g_pendingBinds[i].island.readyState == 1)
+g_pendingBinds[i].b = true;
+if (g_pendingBinds[i].island.readyState == 4 && g_pendingBinds[i].b == true)
+{
+var bindInfo = g_pendingBinds[i];
+g_pendingBinds.splice(i, 1);
+finishDatabindingNode(bindInfo, false);
+i--;
+}
+}
+}
+function finishDatabindingNode(databindInfo, bReady)
+{
+if (bReady != true && databindInfo.island == null)
+return;
+if (databindInfo.island.xml == "" || (databindInfo.transform != null && databindInfo.transform.xml == ""))
+{
+var regexp = /%s/;
+var str = "<B>" + L_strXMLError_Text + "</B>";
+str = str.replace(regexp, databindInfo.el.getAttribute('TreeNodeSrc'));
+databindError(databindInfo, str);
+return;
+}
+if (databindInfo.transform != null)
+{
+var html = databindInfo.island.transformNode(databindInfo.transform);
+try
+{
+databindInfo.island =  new ActiveXObject("Msxml2.DOMDocument");
+}
+catch (e)
+{
+databindError(databindInfo, L_strMSXMLError_Text);
+return;
+}
+databindInfo.island.loadXML(html);
+}
+var container = databindInfo.island.selectSingleNode("TREENODES");
+if (container == null)
+{
+var strXslt = databindInfo.el.getAttribute("TreeNodeXsltSrc");
+var strError = "<B>" + L_strInvalidXML_Text;
+var regexp = /%s/;
+strError = strError.replace(regexp, databindInfo.el.getAttribute('TreeNodeSrc'));
+if (strXslt != null)
+{
+strError += L_strXSLTError_Text + "</B>";
+strError = strError.replace(regexp, databindInfo.el.getAttribute('TreeNodeXsltSrc'));
+}
+else
+strError += "</B>";
+databindError(databindInfo, strError);
+return;
+}
+var child = container.firstChild;
+var html = "";
+while (child != null)
+{
+if (child.nodeName.toLowerCase() == "treenode")
+html += child.xml;
+child = child.nextSibling;
+}
+databindInfo.el._bound = "complete";
+html = html.replace(/(<\/?)(treenode)/gi, "$1" + element.scopeName + ":$2");
+if (databindInfo.el == element)
+{
+contentNode.innerHTML = html;
+g_bNodesReady = true;
+tryToBuildTreeFromRoot();
+}
+else
+{
+databindInfo.el.innerHTML += html;
+if (databindInfo.el.subtree != null)
+{
+buildTree(databindInfo.el, getNodeLevel(databindInfo.el));
+if (databindInfo.el._isExpanding == true)
+{
+databindInfo.el.removeAttribute("_isExpanding");
+finishNodePlusMinusClick(databindInfo.el);
+}
+else
+{
+reselectNode(databindInfo.el);
+}
+}
+}
+doVisualRefresh();
+var evt = element.document.createEventObject();
+if (databindInfo.el == element)
+evt.treeNodeIndex = null;
+else
+evt.treeNodeIndex = getNodeIndex(databindInfo.el);
+evt.reason = 0;
+_tvevtNodeBound.fire(evt);
+}
+function databindError(databindInfo, strError)
+{
+var fetch;
+var event = createEventObject();
+if (databindInfo.el == element)
+event.treeNodeIndex = null;
+else
+event.treeNodeIndex = getNodeIndex(databindInfo.el);
+event.reason = 2;
+_tvevtNodeBound.fire(event);
+if (databindInfo.el == element)
+fetch = defaults.viewLink.all.item("_fetch", 0);
+else
+fetch = databindInfo.el.subtree.all.item("_fetch", 0);
+if (fetch != null)
+{
+var tntext = fetch.all.item("_tntext", 0);
+tntext.innerHTML = strError;
+}
+}
+function databindTypes()
+{
+var src = element.getAttribute("TreeNodeTypeSrc");
+if (src == null)
+return;
+g_bTypesReady = false;
+g_typeIsland = element.document.all(src);
+if (g_typeIsland == null)
+{
+try
+{
+g_typeIsland = new ActiveXObject("Msxml2.DOMDocument");
+}
+catch (e)
+{
+databindError(databindInfo, L_strMSXMLError_Text);
+return;
+}
+g_typeIsland.async = false;
+if (!g_typeIsland.loadXML(src))
+{
+g_typeIsland.async = true;
+g_typeIsland.onreadystatechange = finishDatabindingTypes;
+g_typeIsland.load(src);
+}
+else
+finishDatabindingTypes();
+}
+}
+function finishDatabindingTypes()
+{
+if (g_typeIsland.readyState != 4)
+return;
+if (g_typeIsland.xml == "")
+{
+databindTypesError();
+return;
+}
+var container = g_typeIsland.selectSingleNode("TREENODETYPES");
+if (container == null)
+{
+databindTypesError();
+return;
+}
+var child = container.firstChild;
+var html = "";
+while (child != null)
+{
+if (child.nodeName.toLowerCase() == "treenodetype")
+html += child.xml;
+child = child.nextSibling;
+}
+html = html.replace(/(<\/?)(treenodetype)/gi, "$1" + element.scopeName + ":$2");
+g_typesNode = element.document.createElement("DIV");
+g_typesNode.innerHTML = html;
+element.nodeTypes = g_typesNode.children.tags("TREENODETYPE");
+verifyTypeValues();
+g_bTypesReady = true;
+var evt = element.document.createEventObject();
+evt.reason = 0;
+g_bInTypesBoundEvent = true;
+_tvevtNodeTypesBound.fire(evt);
+g_bInTypesBoundEvent = false;
+tryToBuildTreeFromRoot();
+}
+function databindTypesError()
+{
+var event = createEventObject();
+event.reason = 2;
+g_bInTypesBoundEvent = true;
+_tvevtNodeTypesBound.fire(event);
+g_bInTypesBoundEvent = false;
+g_typesNode = element.document.createElement("DIV");
+element.nodeTypes = g_typesNode.children.tags("TREENODETYPE");
+g_bTypesReady=true;
+}
+function verifyExpandableValue(value)
+{
+var lval = value.toLowerCase();
+switch (lval)
+{
+case "auto":
+case "checkonce":
+case "always":
+return true;
+default:
+return false;
+break;
+}
+}
+function verifyBooleanAttribute(node, att)
+{
+var value = node.getAttribute(att);
+if (value == null)
+return false;
+var boolval = makeBoolean(value);
+if (value == boolval)
+return true;
+node.setAttribute(att, boolval == null ? false : boolval, 0);
+return (boolval != null);
+}
+function makeBoolean(value)
+{
+if (value == true || value == false)
+return value;
+if (value == null)
+return null;
+var lval = value.toLowerCase();
+switch (lval)
+{
+case "true":
+return true;
+case "false":
+return false;
+default:
+return null;
+}
+}
+function verifyTypeValues()
+{
+var len = element.nodeTypes.length;
+for (var i = 0; i < len; i++)
+{
+var str = element.nodeTypes[i].getAttribute("type");
+if (str != null)
+element.nodeTypes[i].setAttribute("type", str.toLowerCase(), 0);
+verifyBooleanAttribute(element.nodeTypes[i], "expanded");
+verifyBooleanAttribute(element.nodeTypes[i], "checkBox");
+}
+}
+function getNodeTypeHtml()
+{
+var html = "";
+for (var i = 0; i < element.nodeTypes.length; i++)
+{
+html += element.nodeTypes[i].outerHTML;
+}
+return html;
+}
+function getDefaultStyle()
+{
+return prop_defaultStyle;
+}
+function setDefaultStyle(value)
+{
+if (prop_defaultStyle == value)
+return;
+if (typeof value == "string")
+{
+prop_defaultStyle = value;
+if (g_bCreated)
+{
+modifyNodesByType(contentNode, null, "defaultstyle")
+_tvpropDefaultStyle.fireChange();
+}
+}
+}
+function getHoverStyle()
+{
+return prop_hoverStyle;
+}
+function setHoverStyle(value)
+{
+if (prop_hoverStyle == value)
+return;
+if (typeof value == "string")
+{
+prop_hoverStyle = value;
+if (g_bCreated)
+{
+modifyNodesByType(contentNode, null, "hoverstyle")
+_tvpropHoverStyle.fireChange();
+}
+}
+}
+function getSelectedStyle()
+{
+return prop_selectedStyle;
+}
+function setSelectedStyle(value)
+{
+if (prop_selectedStyle == value)
+return;
+if (typeof value == "string")
+{
+prop_selectedStyle = value;
+if (g_bCreated)
+{
+modifyNodesByType(contentNode, null, "selectedstyle")
+_tvpropSelectedStyle.fireChange();
+}
+}
+}
+function getChildType()
+{
+return prop_childType;
+}
+function setChildType(value)
+{
+if (prop_childType != value)
+{
+prop_childType = value;
+if (g_bCreated)
+{
+var col = contentNode.children.tags("treenode");
+for (var i = 0; i < col.length; i++)
+buildTree(col[i], 0);
+_tvpropChildType.fireChange();
+}
+}
+}
+function getImageUrl()
+{
+return prop_imageUrl;
+}
+function setImageUrl(value)
+{
+if (prop_imageUrl != value)
+{
+prop_imageUrl = value;
+if (g_bCreated)
+{
+modifyNodesInheritingFromRoot(contentNode, "imageurl", value);
+_tvpropImageUrl.fireChange();
+}
+}
+}
+function getSelectedImageUrl()
+{
+return prop_selectedImageUrl;
+}
+function setSelectedImageUrl(value)
+{
+if (prop_selectedImageUrl != value)
+{
+prop_selectedImageUrl = value;
+if (g_bCreated)
+{
+modifyNodesInheritingFromRoot(contentNode, "selectedimageurl", value);
+_tvpropSelectedImageUrl.fireChange();
+}
+}
+}
+function getExpandedImageUrl()
+{
+return prop_expandedImageUrl;
+}
+function setExpandedImageUrl(value)
+{
+if (prop_expandedImageUrl != value)
+{
+prop_expandedImageUrl = value;
+if (g_bCreated)
+{
+modifyNodesInheritingFromRoot(contentNode, "expandedimageurl", value);
+_tvpropExpandedImageUrl.fireChange();
+}
+}
+}
+function getTarget()
+{
+return prop_target;
+}
+function setTarget(value)
+{
+if (prop_target != value)
+{
+prop_target = value;
+if (g_bCreated)
+{
+modifyNodesInheritingFromRoot(contentNode, "target", value);
+_tvpropTarget.fireChange();
+}
+}
+}
+function getTreeNodeSrc()
+{
+return prop_treeNodeSrc;
+}
+function setTreeNodeSrc(value)
+{
+if (prop_treeNodeSrc != value)
+{
+prop_treeNodeSrc = value;
+_tvpropTreeNodeSrc.fireChange();
+}
+}
+function getTreeNodeXsltSrc()
+{
+return prop_treeNodeXsltSrc;
+}
+function setTreeNodeXsltSrc(value)
+{
+if (prop_treeNodeXsltSrc != value)
+{
+prop_treeNodeXsltSrc = value;
+_tvpropTreeNodeXsltSrc.fireChange();
+}
+}
+function getSelectExpands()
+{
+return prop_selectExpands;
+}
+function setSelectExpands(value)
+{
+var boolval = makeBoolean(value)
+if (boolval != null && boolval != prop_selectExpands)
+{
+prop_selectExpands = value;
+if (g_bCreated)
+_tvpropSelectExpands.fireChange();
+}
+}
+function getExpandLevel()
+{
+return prop_expandLevel;
+}
+function setExpandLevel(value)
+{
+if (prop_expandLevel != value)
+{
+prop_expandLevel = value - 0;
+if (g_bCreated)
+{
+expandNodes(contentNode, value);
+_tvpropExpandLevel.fireChange();
+}
+}
+}
+function getAutoSelect()
+{
+return prop_autoSelect;
+}
+function setAutoSelect(value)
+{
+var boolval = makeBoolean(value)
+if (boolval != null && boolval != prop_autoSelect)
+{
+prop_autoSelect = value;
+if (g_bCreated)
+_tvpropAutoSelect.fireChange();
+}
+}
+function getTreeNodeTypeSrc()
+{
+return prop_treeNodeTypeSrc;
+}
+function setTreeNodeTypeSrc(value)
+{
+if (prop_treeNodeTypeSrc != value)
+{
+prop_treeNodeTypeSrc = value;
+if (g_bCreated)
+{
+_tvpropTreeNodeTypeSrc.fireChange();
+}
+}
+}
+function getShowLines()
+{
+return prop_showLines;
+}
+function setShowLines(value)
+{
+var boolval = makeBoolean(value);
+if (prop_showLines != boolval && boolval != null)
+{
+prop_showLines = boolval;
+if (g_bCreated)
+{
+buildTreeFromRoot();
+_tvpropShowLines.fireChange();
+}
+}
+}
+function getShowPlus()
+{
+return prop_showPlus;
+}
+function setShowPlus(value)
+{
+var boolval = makeBoolean(value);
+if (prop_showPlus != boolval && boolval != null)
+{
+prop_showPlus = boolval;
+if (g_bCreated)
+{
+modifyNodesByType(contentNode, null, "_showplus");
+_tvpropShowPlus.fireChange();
+}
+}
+}
+function getShowToolTip()
+{
+return prop_showToolTip;
+}
+function setShowToolTip(value)
+{
+var boolval = makeBoolean(value);
+if (prop_showToolTip != boolval && boolval != null)
+{
+prop_showToolTip = boolval;
+if (g_bCreated)
+{
+_tvpropShowToolTip.fireChange();
+}
+}
+}
+function getIndent()
+{
+return prop_indent;
+}
+function setIndent(value)
+{
+if (prop_indent != value)
+{
+if (typeof value == "string")
+{
+var i = parseInt(value);
+if (i == NaN)
+return;
+else
+prop_indent = i;
+}
+else if (typeof value == "number")
+prop_indent = value;
+else
+return;
+if (g_bCreated)
+{
+if (getShowLines() != true)
+modifyNodesByType(contentNode, null, "_indent");
+_tvpropShowLines.fireChange();
+}
+}
+}
+function getSelectedNodeIndex()
+{
+return prop_selectedNodeIndex;
+}
+function setSelectedNodeIndex(value)
+{
+if (prop_selectedNodeIndex != value && typeof value == "string")
+{
+if (value.length == 0)
+return;
+if (value.search(/[^0-9.]/) != -1)
+return;
+if (value[0] == '.')
+return;
+if (value.indexOf("..") != -1)
+return;
+if (g_bCreated)
+{
+var node = getNodeFromIndex(value);
+if (node != null && node.subtree != null)
+{
+selectNode(node);
+_tvpropSelectedNodeIndex.fireChange();
+}
+else
+{
+if (value != "0")
+selectedNodeIndex = "0";
+else
+prop_selectedNodeIndex = "";
+}
+}
+else
+prop_selectedNodeIndex = value;
+}
+}
+function getSystemImagesPath()
+{
+return prop_systemImagesPath;
+}
+function setSystemImagesPath(value)
+{
+if (prop_systemImagesPath != value && typeof value == "string")
+{
+prop_systemImagesPath = value;
+if (g_bCreated)
+{
+buildTreeFromRoot();
+_tvpropSystemImagesPath.fireChange();
+}
+}
+}
+function expandNodes(root, level)
+{
+if (root != contentNode)
+{
+var exp = root.getAttribute("expanded");
+if (exp != true)
+{
+doNodePlusMinusClick(root);
+}
+}
+if (level > 0)
+{
+var col = root.children.tags("treenode");
+for (var i = 0; i < col.length; i++)
+{
+expandNodes(col[i], level - 1);
+}
+}
+}
+function databind()
+{
+if (g_typesNode == null)
+g_typesNode = element.document.createElement("DIV");
+g_typesNode.innerHTML = getNodeTypeHtml();
+element.nodeTypes = g_typesNode.children.tags("TREENODETYPE");
+treeviewNode.subtree.removeNode(true);
+contentNode.innerText = "";
+databindNode(element);
+}
+function getTreeNodeType(key)
+{
+var tnt = null;
+var len = element.nodeTypes.length;
+if (typeof key == "number")
+{
+if (key >= 0 && key < len)
+tnt = element.nodeTypes[key];
+}
+else
+{
+for (var i = 0; i < len; i++)
+{
+var temp = element.nodeTypes[i];
+if (temp.getAttribute("Type") == key)
+{
+tnt = temp;
+break;
+}
+}
+}
+if (tnt != null)
+return private_getTreeNodeType(tnt);
+else
+return null;
+}
+function createTreeNodeType()
+{
+var realtnt = element.document.createElement("treenodetype");
+return private_getTreeNodeType(realtnt);
+}
+function private_getTreeNodeType(tnt)
+{
+var obj = new Object();
+obj.addTo = function(tree)
+{
+if (tree.nodeTypes == null || tree.nodeTypes.length == 0)
+{
+g_typesNode = element.document.createElement("DIV");
+g_typesNode.appendChild(tnt);
+tree.nodeTypes = g_typesNode.children.tags("TREENODETYPE");
+}
+else
+{
+g_typesNode.appendChild(tnt);
+tree.nodeTypes = g_typesNode.children.tags("TREENODETYPE");
+}
+modifyNodesByType(contentNode, tnt.getAttribute("type"), "type");
+}
+obj.remove = function(bRedraw) { private_removeTreeNodeType(tnt, bRedraw); };
+obj.getAttribute = function(name) { return private_getNodeTypeAttribute(tnt, name); };
+obj.setAttribute = function(name, value) { private_setNodeTypeAttribute(tnt, name, value); };
+return obj;
+}
+function addTreeNodeType(tnt)
+{
+tnt.addTo(element);
+}
+function private_removeTreeNodeType(tnt, bRedraw)
+{
+var name = tnt.getAttribute("Type");
+tnt.removeNode(false);
+if (bRedraw != false)
+{
+modifyNodesByType(contentNode, null, "type");
+}
+else
+{
+modifyNodesByType(contentNode, null, "_nodetypeIndex");
+}
+}
+function modifyNodesByType(node, type, att)
+{
+if (node != contentNode)
+{
+if (node.subtree == null)
+return;
+if (type == null || getNodeAttribute(node, "Type") == type)
+{
+modifyNode(node, att, null, type);
+if (att == "type" || att == "childtype")
+return;
+}
+}
+var col = node.children.tags("treenode");
+for (var i = 0; i < col.length; i++)
+{
+modifyNodesByType(col[i], type, att);
+}
+}
+function modifyNodesInheritingFromRoot(root, att, value)
+{
+if (root != contentNode)
+{
+if (root.subtree == null)
+return;
+if (inheritsFromRoot(root, att))
+{
+modifyNode(root, att, value, null);
+if (att == "type" || att == "childtype")
+return;
+}
+}
+var col = root.children.tags("treenode");
+for (var i = 0; i < col.length; i++)
+{
+modifyNodesInheritingFromRoot(col[i], att, value);
+}
+}
+function inheritsFromRoot(node, att)
+{
+if (node.getAttribute(att) != null)
+return false;
+if (getNodeTypeAttribute(node, att) != null)
+return false;
+return true;
+}
+function private_getNodeTypeAttribute(tnt, name)
+{
+return tnt.getAttribute(name.toLowerCase());
+}
+function private_setNodeTypeAttribute(tnt, name, value)
+{
+var lname = name.toLowerCase();
+if (lname == "outerhtml")
+return;
+var old = tnt.getAttribute(name, value);
+tnt.setAttribute(name, value, 0);
+if (tnt.parentElement == null)
+return;
+switch (lname)
+{
+case "text":
+case "innertext":
+break;
+case "expandable":
+if (verifyExpandableValue(value) == true)
+modifyNodesByType(contentNode, tnt.getAttribute("type"), lname);
+else
+tnt.setAttribute(name, old, 0);
+break;
+default:
+modifyNodesByType(contentNode, tnt.getAttribute("type"), lname);
+break;
+}
+}
+function createTreeNode()
+{
+var realNode = element.document.createElement("treenode");
+return private_getTreeNode(realNode);
+}
+function getTreeNode(index)
+{
+var node = getNodeFromIndex(index);
+if (node == null)
+return null;
+return private_getTreeNode(node);
+}
+function private_getTreeNode(node)
+{
+var obj = new Object();
+obj.addAt = function(index, newnode)
+{
+if (newnode._real != null)
+private_addAt(node, index, newnode._real);
+else
+{
+var temp = private_getTreeNode(node);
+temp._real = node;
+newnode.addTo(index, temp);
+}
+};
+obj.addTo = function(index, parent)
+{
+if (parent._real != null)
+private_addAt(parent._real, index, node);
+else
+{
+var temp = private_getTreeNode(node);
+temp._real = node;
+parent.addAt(index, temp);
+}
+};
+obj.add = function(newnode) { obj.addAt(node.children.tags("treenode").length, newnode); };
+obj.remove = function() { private_remove(node); };
+obj.databind = function() { private_databind(node); };
+obj.getAttribute = function(name) { return private_getAttribute(node, name); };
+obj.setAttribute = function(name, value) { private_setAttribute(node, name, value); };
+obj._real = null;
+obj.findAttribute = function(name) { return getNodeAttribute(node, name); };
+obj.getNodeIndex = function()
+{
+var index = getNodeIndex(node);
+if (index == "")
+return null;
+return index;
+};
+obj.getParent = function()
+{
+if (node.parentElement == null || node.parentElement.tagName.toLowerCase() != "treenode")
+return null;
+else
+return private_getTreeNode(node.parentElement);
+};
+obj.getChildren = function() { return private_getChildren(node); };
+return obj;
+}
+function addAt(index, node)
+{
+node.addTo(index, private_getTreeNode(contentNode));
+}
+function add(node)
+{
+node.addTo(contentNode.children.tags("treenode").length, private_getTreeNode(contentNode));
+}
+function private_addAt(parent, index, child)
+{
+if (child.parentElement != null)
+return;
+var col = parent.children.tags("treenode");
+var iCount = col.length;
+if (index < 0 || index > iCount)
+return;
+var selectedNode = getNodeFromIndex(selectedNodeIndex);
+if (index == iCount)
+parent.appendChild(child);
+else
+{
+col[index].insertAdjacentElement("beforeBegin", child);
+}
+child.sibIndex = index;
+for (var i = index; i <= iCount; i++)
+col[i].sibIndex = i;
+if (selectedNode != null && index < selectedNode.sibIndex)
+prop_selectedNodeIndex = getNodeIndex(selectedNode);
+var p = parent;
+while (p != null && p.tagName.toLowerCase() == "treenode")
+p = p.parentElement;
+if (p != null && p.tagName.toLowerCase() != "treeview")
+return;
+if (parent.getAttribute("expanded") == true || parent == contentNode)
+{
+var disptree = buildTree(child, getNodeLevel(child));
+if (index == iCount)
+{
+if (parent.subtree == null)
+{
+if (parent == contentNode)
+tryToBuildTreeFromRoot();
+else
+parent.subtree = disptree;
+}
+else
+{
+if (parent == contentNode)
+treeviewNode.subtree.appendChild(disptree);
+else
+parent.subtree.appendChild(disptree);
+}
+}
+else
+col[index + 1].subtree.insertAdjacentElement("beforeBegin", disptree);
+if (element.getAttribute("showlines") != false && index > 0 && col[index - 1].getAttribute("expanded") == true)
+{
+buildTree(col[index - 1], getNodeLevel(col[index - 1]));
+if (selectedNodeIndex.indexOf(getNodeIndex(col[index - 1])) == 0)
+reselectNode(getNodeFromIndex(selectedNodeIndex));
+}
+}
+if (iCount == 0)
+{
+if (parent != contentNode)
+replaceJunctionNode(parent);
+}
+else if (index == iCount)
+replaceJunctionNode(col[index - 1]);
+else if (index == 0)
+replaceJunctionNode(col[1]);
+if (selectedNode != null)
+prop_selectedNodeIndex = getNodeIndex(selectedNode);
+else
+selectNode(child);
+}
+function private_remove(node)
+{
+if (node.parentElement == null)
+return null;
+var parent = node.parentElement;
+var col = parent.children.tags("treenode");
+var iCount = col.length;
+var sibindex = node.sibIndex;
+var selectedNode = getNodeFromIndex(selectedNodeIndex);
+var nodeIndex = getNodeIndex(node);
+node.subtree.removeNode(true);
+node.subtree = null;
+node.removeNode(true);
+node.removeAttribute("sibIndex");
+if (node.getAttribute("expanded") == false)
+node._buildChildren = true;
+if (iCount == 1)
+replaceJunctionNode(parent);
+else if (sibindex != 0 && sibindex == iCount - 1)
+buildTree(col[sibindex - 1], getNodeLevel(col[sibindex - 1]));
+else if (sibindex == 0 && parent.tagName.toLowerCase() != "treenode")
+replaceJunctionNode(col[0]);
+for (var i = sibindex; i < col.length; i++)
+col[i].sibIndex = i;
+if (node == selectedNode ||
+(selectedNodeIndex.length > nodeIndex.length && selectedNodeIndex.substr(0, nodeIndex.length + 1) == nodeIndex + "."))
+{
+var temp = prop_selectedNodeIndex;
+prop_selectedNodeIndex = "";
+if (iCount - 1 > sibindex)
+selectNode(col[sibindex]);
+else if (iCount > 1 && sibindex > 0)
+selectNode(col[sibindex - 1]);
+else if (nodeIndex != "0")
+selectNode(parent);
+else
+{
+prop_selectedNodeIndex = temp;
+selectNode(null);
+}
+}
+else
+{
+prop_selectedNodeIndex = "";
+selectNode(selectedNode);
+}
+return node;
+}
+function private_databind(node)
+{
+var dataNodeIndex = getNodeIndex(node);
+if ((dataNodeIndex != selectedNodeIndex) && (selectedNodeIndex.indexOf(dataNodeIndex) == 0))
+selectNode(node);
+col = node.children.tags("treenode");
+for (var i = col.length - 1; i >= 0; i--)
+{
+if (col[i].subtree != null)
+col[i].subtree.removeNode(true);
+col[i].removeNode(true);
+}
+node._bound = null;
+databindNode(node);
+}
+function private_getAttribute(node, name)
+{
+var lcName = name.toLowerCase();
+var ret = node.getAttribute(lcName);
+if (ret == null && lcName == "text")
+{
+var textnode = node.subtree.all.item("_tntext", 0);
+ret = textnode.innerText;
+}
+return ret;
+}
+function private_setAttribute(node, name, value)
+{
+var lname = name.toLowerCase();
+if (lname == "outerhtml")
+return;
+var old = node.getAttribute(name, value);
+node.setAttribute(name, value, 0);
+if (node.parentElement == null)
+return;
+if (node.subtree == null)
+return;
+modifyNode(node, lname, value, old);
+}
+function getChildren()
+{
+return private_getChildren(contentNode);
+}
+function private_getChildren(root)
+{
+var col = root.children.tags("treenode");
+var objArray = new Array(col.length);
+for (var iNode = 0; iNode < col.length; iNode++)
+{
+objArray[iNode] = private_getTreeNode(col[iNode]);
+}
+return objArray;
+}
+function modifyNode(node, lname, value, old)
+{
+switch (lname)
+{
+case "defaultstyle":
+case "hoverstyle":
+case "selectedstyle":
+case "style":
+var oItem = node.subtree.all.item("_tntext", 0);
+var stylename = oItem.className;
+if (stylename == "")
+stylename = "defaultstyle";
+SetAnchorClass(oItem, stylename);
+if (!g_bFocus && (stylename == "selectedstyle"))
+{
+blurFilter(oItem);
+}
+break;
+case "text":
+case "innertext":
+case "innerhtml":
+var tntext = node.subtree.all.item("_tntext", 0);
+var newText = generateTextNode(node);
+tntext.replaceNode(newText);
+var accessAnchor = node.subtree.all.item("_tnaccess", 0);
+if (accessAnchor.getAttribute("title") != "")
+accessAnchor.title = newText.innerText + " : " + L_strToolTip_Text;
+reselectNode(node);
+break;
+case "imageurl":
+if (selectedNodeIndex == getNodeIndex(node))
+{
+if (getNodeAttribute(node, "selectedImageUrl") == null)
+changeIcon(node, lname);
+}
+else if (node.getAttribute("Expanded") == true)
+changeIcon(node, "expandedimageurl");
+else
+changeIcon(node, lname);
+break;
+case "selectedimageurl":
+if (selectedNodeIndex == getNodeIndex(node))
+changeIcon(node, lname);
+break;
+case "expandedimageurl":
+if (node.getAttribute("Expanded") == true && (selectedNodeIndex != getNodeIndex(node) || getNodeAttribute(node, "selectedImageUrl") == null))
+changeIcon(node, lname);
+break;
+case "type":
+buildTree(node, getNodeLevel(node));
+var temp = getNodeFromIndex(selectedNodeIndex);
+prop_selectedNodeIndex = "";
+selectNode(temp);
+break;
+case "childtype":
+var col = node.children.tags("treenode");
+for (i = 0; i < col.length; i++)
+{
+buildTree(col[i], getNodeLevel(col[i]));
+var temp = getNodeFromIndex(selectedNodeIndex);
+prop_selectedNodeIndex = "";
+selectNode(temp);
+}
+break;
+case "target":
+var accessnode = node.subtree.all("_tnaccess", 0);
+accessnode.target = getNodeAttribute(node, lname);
+accessnode.parentElement.target = accessnode.target;
+break;
+case "navigateurl":
+var accessnode = node.subtree.all("_tnaccess", 0);
+var url = getNodeAttribute(node, lname);
+if (url == "" || url == null)
+{
+accessnode.removeAttribute("href");
+accessnode.parentElement.removeAttribute("href");
+if (url == "")
+node.removeAttribute("navigateUrl");
+}
+else
+{
+accessnode.href = getNodeAttribute(node, lname);
+accessnode.parentElement.href = accessnode.href;
+}
+break;
+case "expandable":
+if (verifyExpandableValue(value) == true)
+replaceJunctionNode(node);
+else
+node.setAttribute(lname, old, 0);
+break;
+case "expanded":
+if (verifyBooleanAttribute(node, lname) == false)
+node.setAttribute(lname, old, 0);
+else if (node.getAttribute(lname) != old)
+{
+node.setAttribute("expanded", !node.getAttribute("expanded"), 0);
+doNodePlusMinusClick(node);
+}
+break;
+case "checked":
+if (verifyBooleanAttribute(node, lname) == false)
+node.setAttribute(lname, old, 0);
+else if (getNodeAttribute(node, "checkBox") == true && node.getAttribute(lname) != old)
+{
+var cb = node.subtree.all.item("_cb", 0);
+cb.setAttribute("checked", node.getAttribute(lname), 0);
+}
+break;
+case "checkbox":
+if (verifyBooleanAttribute(node, lname) == false && node.getAttribute(lname) != null)
+node.setAttribute(lname, old, 0);
+else if (getNodeAttribute(node, "checkbox") == true)
+{
+if (old != true)
+{
+var jn = node.subtree.all("junction", 0);
+if (jn)
+{
+var cb = createCheckBox(node);
+jn.parentElement.insertAdjacentElement("afterEnd", cb);
+}
+}
+}
+else
+{
+var cb = node.subtree.all("_fcb", 0);
+if (cb)
+cb.removeNode(true);
+}
+break;
+case "treenodesrc":
+case "treenodexsltsrc":
+if (value != null)
+{
+node.setAttribute("checkedExpandable", false, 0);
+node._bound = null;
+}
+break;
+case "_showplus":
+replaceJunctionNode(node);
+break;
+case "_indent":
+var strIndex = getNodeIndex(node);
+if (strIndex.indexOf(".") != -1)
+{
+if (isRtl())
+node.subtree.style.marginRight = prop_indent;
+else
+node.subtree.style.marginLeft = prop_indent;
+}
+break;
+case "_nodetypeIndex":
+node.nodetypeIndex = undefined;
+node.inheritedType = undefined;
+break;
+}
+}
+function f_CleanupEvents()
+{
+var eventArray = window.__treeviewAttachedEvents;
+if ((eventArray != null) && (eventArray[0]))
+{
+var newArray = new Array(false);
+for (var i = 1; i < eventArray.length; i++)
+{
+if (element.document.all[eventArray[i][0]] == null)
+{
+element.document.detachEvent("onstop", eventArray[i][1]);
+}
+else
+{
+newArray = newArray.concat(new Array(eventArray[i]));
+}
+}
+window.__treeviewAttachedEvents = newArray;
+}
+}
+function f_AddStopEvent()
+{
+var eventArray = window.__treeviewAttachedEvents;
+if (eventArray == null)
+{
+eventArray = new Array(false);
+}
+element.document.attachEvent("onstop", onstop);
+eventArray[0] = true;
+entry = new Array(element.uniqueID, onstop);
+window.__treeviewAttachedEvents = eventArray.concat(new Array(entry));
+}
+function onScroll()
+{
+setHiddenHelperValue();
+}
+function isRtl()
+{
+if (element.currentStyle.direction.toLowerCase() == "rtl" || element.dir.toLowerCase() == "rtl")
+return true;
+else
+return false;
+}
+function doVisualRefresh()
+{
+var display = element.style.display;
+element.style.display = "none";
+element.style.display = display;
+}
+</script>

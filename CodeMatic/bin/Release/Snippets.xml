@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Use "{}" to declare cursorpoint -->
+<snippets>
+  <snippet name="Cursor READ_ONLY...">DECLARE {} CURSOR READ_ONLY FOR 
+&lt;select_statement&gt;
+
+DECLARE @name varchar(40)
+OPEN &lt;cursor_name&gt;
+
+FETCH NEXT FROM &lt;cursor_name&gt; INTO @name
+WHILE (@@fetch_status &lt;&gt; -1)
+BEGIN
+	&lt;...&gt;
+
+	FETCH NEXT FROM &lt;cursor_name, sysname, test_cursor&gt; INTO @name
+END
+CLOSE &lt;cursor_name&gt;
+DEALLOCATE &lt;cursor_name&gt;
+
+</snippet>
+  <snippet name="SELECT...">
+
+
+SELECT *
+FROM </snippet>
+  <snippet name="CREATE PROC"> create PROCEDURE {0} as </snippet>
+  <snippet name="ttttt">ttttttttt</snippet>
+</snippets>

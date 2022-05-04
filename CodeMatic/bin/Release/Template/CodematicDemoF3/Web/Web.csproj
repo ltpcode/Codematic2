@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B535162-10C2-4238-BC56-193B968E1834}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maticsoft.Web</RootNamespace>
+    <AssemblyName>Maticsoft.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LTP.Accounts, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\LTP.Accounts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>..\Lib\Microsoft.Web.UI.WebControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LtpPageControl">
+      <HintPath>..\Lib\LtpPageControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueTheme\Default.css" />
+    <Content Include="App_Themes\Green2Theme\Default.css" />
+    <Content Include="App_Themes\GreenTheme\Default.css" />
+    <Content Include="App_Themes\PurpleTheme\Default.css" />
+    <Content Include="App_Themes\RedTheme\Default.css" />
+    <Content Include="Controls\checkright.ascx" />
+    <Content Include="Controls\copyright.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="Style.css" />
+    <Content Include="ValidateCode.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="webctrl_client\1_0\Images\folder.gif" />
+    <Content Include="webctrl_client\1_0\Images\folderopen.gif" />
+    <Content Include="webctrl_client\1_0\Images\html.gif" />
+    <Content Include="webctrl_client\1_0\Images\root.gif" />
+    <Content Include="webctrl_client\1_0\MultiPage.htc" />
+    <Content Include="webctrl_client\1_0\TabStrip.htc" />
+    <Content Include="webctrl_client\1_0\toolbar.htc" />
+    <Content Include="webctrl_client\1_0\TreeImages\f.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\fminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\fplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\i.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\L.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Lminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Lplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\minus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\plus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\r.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Rminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Rplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\F.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Fminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Fplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\I.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\L.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Lminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Lplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\minus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\plus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\r.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Rminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Rplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\T.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Tminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\Tplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\rtl\white.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\T.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Tminus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\Tplus.gif" />
+    <Content Include="webctrl_client\1_0\TreeImages\white.gif" />
+    <Content Include="webctrl_client\1_0\treeview.htc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CheckRight.ascx.cs">
+      <DependentUpon>checkright.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckRight.ascx.designer.cs">
+      <DependentUpon>checkright.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CopyRight.ascx.cs">
+      <DependentUpon>copyright.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CopyRight.ascx.designer.cs">
+      <DependentUpon>copyright.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateCode.aspx.cs">
+      <DependentUpon>ValidateCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateCode.aspx.designer.cs">
+      <DependentUpon>ValidateCode.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueTheme\Control.skin" />
+    <Content Include="App_Themes\Green2Theme\Control.skin" />
+    <Content Include="App_Themes\GreenTheme\Control.skin" />
+    <Content Include="App_Themes\PurpleTheme\Control.skin" />
+    <Content Include="App_Themes\RedTheme\Control.skin" />
+    <Content Include="Default.aspx" />
+    <Content Include="MasterPage.master" />
+    <None Include="webctrl_client\1_0\Images\vssver2.scc" />
+    <None Include="webctrl_client\1_0\TreeImages\rtl\vssver2.scc" />
+    <None Include="webctrl_client\1_0\TreeImages\vssver2.scc" />
+    <None Include="webctrl_client\1_0\vssver2.scc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\CheckRight.ascx.resx">
+      <DependentUpon>CheckRight.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CopyRight.ascx.resx">
+      <DependentUpon>CopyRight.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{E3D8759A-C5EB-402D-9F10-F5C6029A8D1A}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{53995DBB-9836-4647-AD22-865884FDEB9E}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OracleDAL\OracleDAL.csproj">
+      <Project>{9FE00521-3A8B-42B1-814E-585E99407B2E}</Project>
+      <Name>OracleDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServerDAL\SQLServerDAL.csproj">
+      <Project>{AB835BA2-FFD6-49CD-87B0-E216255BB32E}</Project>
+      <Name>SQLServerDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3448</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

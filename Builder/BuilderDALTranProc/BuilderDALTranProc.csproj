@@ -1,0 +1,68 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A00515C-1E01-43EF-A415-B4EF557FA10B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LTP.BuilderDALTranProc</RootNamespace>
+    <AssemblyName>LTP.BuilderDALTranProc</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuilderDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CodeHelper\CodeHelper.csproj">
+      <Project>{CBE47089-9D43-4943-A388-5192953C40C4}</Project>
+      <Name>CodeHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IBuilder\IBuilder.csproj">
+      <Project>{8FE4345A-3495-4597-BC6F-9C6D7D48B149}</Project>
+      <Name>IBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IDbObject\IDBO.csproj">
+      <Project>{EEE41BE0-CCD0-413F-8455-EBA28E1385E5}</Project>
+      <Name>IDBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\Utility.csproj">
+      <Project>{15F54374-E676-40F3-B291-13E39A423338}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\Lib\</PostBuildEvent>
+  </PropertyGroup>
+</Project>

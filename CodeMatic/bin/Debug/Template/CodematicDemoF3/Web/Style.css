@@ -1,0 +1,27 @@
+td { font-size: 9pt}
+a { color: #000000; text-decoration: none}
+a:hover { color:#E78a29; text-decoration: none}
+
+.hidenstyle {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	z-index:1;
+	width:70px;
+	white-space: nowrap;
+	padding-left: 4px;
+}
+
+
+/*
+Author:RobotH
+Modify Date:2007-04-04
+*/
+    .b12{font-size:12px;}
+    A.b122:link{font-size:12px;color:black; text-decoration:none;}
+    A.b122:visited{font-size:12px;color:black;text-decoration:none;}
+    A.b122:hover{font-size:12px;color:#666666;text-decoration:none;}
+    body {FONT-SIZE: 12px; SCROLLBAR-ARROW-COLOR: #698cc3; SCROLLBAR-BASE-COLOR: #f8f8f8; margin-top:0px;}
+    table {FONT: 12px Tahoma, Verdana; COLOR: #000000;}
+/*
+end
+*/

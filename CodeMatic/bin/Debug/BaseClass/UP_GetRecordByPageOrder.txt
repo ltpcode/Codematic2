@@ -1,0 +1,68 @@
+
+------------------------------------
+--用途：支持任意排序的分页存储过程  
+--说明：
+------------------------------------
+
+CREATE PROCEDURE UP_GetRecordByPageOrder
+ 
+ @tblName varchar(255),   -- 表名 
+ @fldName varchar(255),   -- 显示字段名 
+ @OrderfldName varchar(255),  -- 排序字段名 
+ @StatfldName varchar(255),  -- 统计字段名 
+ @PageSize int = 10,   -- 页尺寸 
+ @PageIndex int = 1,   -- 页码 
+ @IsReCount bit = 0,   -- 返回记录总数, 非 0 值则返回 
+ @OrderType bit = 0,   -- 设置排序类型, 非 0 值则降序 
+ @strWhere varchar(1000) = ''  -- 查询条件 (注意: 不要加 where) 
+AS 
+
+ declare @strSQL varchar(6000)  -- 主语句 
+ declare @strTmp varchar(100)   -- 临时变量 
+ declare @strOrder varchar(400)  -- 排序类型 
+
+if @OrderType != 0 
+ begin 
+  set @strTmp = '<(select min' 
+  set @strOrder = ' order by [' + @OrderfldName +'] desc' 
+ end 
+else 
+ begin 
+  set @strTmp = '>(select max' 
+  set @strOrder = ' order by [' + @OrderfldName +'] asc' 
+ end 
+
+set @strSQL = 'select top ' + str(@PageSize) + ' ' + @fldName + ' from [' 
+ + @tblName + '] where [' + @OrderfldName + ']' + @strTmp + '([' 
+ + @OrderfldName + ']) from (select top ' + str((@PageIndex-1)*@PageSize) + ' [' 
+ + @OrderfldName + '] from [' + @tblName + ']' + @strOrder + ') as tblTmp)' 
+ + @strOrder 
+
+if @strWhere != '' 
+ set @strSQL = 'select top ' + str(@PageSize) + ' ' + @fldName + ' from [' 
+ + @tblName + '] where [' + @OrderfldName + ']' + @strTmp + '([' 
+ + @OrderfldName + ']) from (select top ' + str((@PageIndex-1)*@PageSize) + ' [' 
+ + @OrderfldName + '] from [' + @tblName + '] where ' + @strWhere + ' ' 
+ + @strOrder + ') as tblTmp) and ' + @strWhere + ' ' + @strOrder 
+
+if @PageIndex = 1 
+ begin 
+  set @strTmp = '' 
+  if @strWhere != '' 
+  set @strTmp = ' where ' + @strWhere 
+
+  set @strSQL = 'select top ' + str(@PageSize) + ' ' + @fldName + ' from [' 
+  + @tblName + ']' + @strTmp + ' ' + @strOrder 
+ end 
+
+
+if @IsReCount != 0 
+	set @strSQL = @strSQL+' select count(1) as Total from [' + @tblName + ']'
+
+if @strWhere!=''
+	set @strSQL = @strSQL+' where ' + @strWhere
+exec (@strSQL) 
+
+
+
+GO

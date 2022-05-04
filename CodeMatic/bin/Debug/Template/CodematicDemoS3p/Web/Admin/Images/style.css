@@ -1,0 +1,127 @@
+A:link,A:active,A:visited{TEXT-DECORATION:none;Color:#0E3B82;}
+A:hover{TEXT-DECORATION:none;Color:#4F7EC9}
+
+A.ding:link,A.ding:active,A.ding:visited{TEXT-DECORATION:none;Color:#FFFFFF;}
+A.ding:hover{TEXT-DECORATION:none;Color:#6A6A6A;}
+
+A.news:link,A.news:active,A.news:visited{TEXT-DECORATION:none;Color:#6A6A6A;}
+A.news:hover{TEXT-DECORATION:none;Color:#000000;}
+
+A.link:link,A.link:active,A.link:visited{TEXT-DECORATION:none;Color:#6A6A6A};
+A.link:hover{TEXT-DECORATION:underline;Color:#6A6A6A;}
+
+A.www:link,A.www:active,A.www:visited{TEXT-DECORATION:none;Color:#FFFFFF};
+A.www:hover{TEXT-DECORATION:underline;Color:#FFFFFF;}
+
+td	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	color:#0E3B82;
+	LINE-HEIGHT: 18px;
+	}
+.a1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	color:#FFFFFF;
+	}
+.b1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px; 
+	color:#6A6A6A;
+	LINE-HEIGHT: 18px;
+	}
+.c1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px; 
+	color:#FFFFFF;
+	}
+.d1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	color:#FFFFFF;
+	}
+.e1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	color:#FFFFFF;
+	}
+.f1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px; 
+	color:#6A6A6A;
+	LINE-HEIGHT: 24px;
+	}
+.g1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt; 
+	color:#6A6A6A;
+	}
+.h1	{
+	font-family: Tahoma; 
+	font-size: 9pt; 
+	color:#FFFFFF;
+	}
+.h2	{
+	font-family: Tahoma; 
+	font-size: 9px; 
+	color:#FFFFFF;
+	}
+.all{
+	BORDER-RIGHT: #4F7EC9 1px solid; 
+	BORDER-TOP: #4F7EC9 1px solid;
+	BORDER-LEFT: #4F7EC9 1px solid; 
+	BORDER-BOTTOM: #4F7EC9 1px solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	}
+.top{
+	padding-left:10; 
+	padding-top:10
+	}
+.i3	{
+	background: url(i3.gif);
+	background-repeat: no-repeat;
+	}
+.j3	{
+	background: url(j3.gif);
+	background-repeat: no-repeat;
+	}
+.j3-1	{
+	background: url(j3-1.gif);
+	background-repeat: no-repeat;
+	}
+.j3-2	{
+	background: url(j3-2.gif);
+	background-repeat: no-repeat;
+	}
+.j3-3	{
+	background: url(j3-3.gif);
+	background-repeat: no-repeat;
+	}
+.j3-4	{
+	background: url(j3-4.gif);
+	background-repeat: no-repeat;
+	}
+.j3-5	{
+	background: url(j3-5.gif);
+	background-repeat: no-repeat;
+	}
+.j3-6	{
+	background: url(j3-6.gif);
+	background-repeat: no-repeat;
+	}
+.j3-7	{
+	background: url(j3-7.gif);
+	background-repeat: no-repeat;
+	}
+.j3-8	{
+	background: url(j3-8.gif);
+	background-repeat: no-repeat;
+	}
+.k1	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt; 
+	color:#6A6A6A;
+	LINE-HEIGHT: 18px;
+	}

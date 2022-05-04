@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Builders>
+  <Builder>
+    <Guid>94F2CF68-CECB-47b5-81D9-68BF5806ACF5</Guid>
+    <Name>Maticsoft BuilderDALSQL</Name>
+    <Decription>基于SQL方式</Decription>
+    <Assembly>LTP.BuilderDALSQL</Assembly>
+    <Classname>LTP.BuilderDALSQL.BuilderDAL</Classname>
+    <Version>2.1.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>94F2CF68-CECB-47b5-81D9-68BF5806ACF2</Guid>
+    <Name>Maticsoft BuilderDALParam</Name>
+    <Decription>基于Parameter方式</Decription>
+    <Assembly>LTP.BuilderDALParam</Assembly>
+    <Classname>LTP.BuilderDALParam.BuilderDAL</Classname>
+    <Version>2.1.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>94F2CF68-CECB-47b5-81D9-68BF5806ACF1</Guid>
+    <Name>Maticsoft BuilderDALProc</Name>
+    <Decription>基于存储过程方式</Decription>
+    <Assembly>LTP.BuilderDALProc</Assembly>
+    <Classname>LTP.BuilderDALProc.BuilderDAL</Classname>
+    <Version>2.1.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>7CBA9B17-2D38-4D25-9B02-115487B38B9F</Guid>
+    <Name>BuilderDALELParam</Name>
+    <Decription>基于企业库Param方式</Decription>
+    <Assembly>LTP.BuilderDALELParam</Assembly>
+    <Classname>LTP.BuilderDALELParam.BuilderDAL</Classname>
+    <Version>2.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>7DF51581-8A67-4524-ADBD-C272FD39E7D8</Guid>
+    <Name>BuilderDALELSQL</Name>
+    <Decription>基于企业库SQL方式</Decription>
+    <Assembly>LTP.BuilderDALELSQL</Assembly>
+    <Classname>LTP.BuilderDALELSQL.BuilderDAL</Classname>
+    <Version>2.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>6232952B-0598-4FE7-8E4A-DBBBE86B8676</Guid>
+    <Name>BuilderDAELLProc</Name>
+    <Decription>基于企业库Proc方式</Decription>
+    <Assembly>LTP.BuilderDALELProc</Assembly>
+    <Classname>LTP.BuilderDALELProc.BuilderDAL</Classname>
+    <Version>2.0</Version>
+  </Builder>
+  <Builder>
+    <Guid>490036AC-B954-474D-83AF-9739C126B332</Guid>
+    <Name>BuilderDALTranParam</Name>
+    <Decription>父子表生成</Decription>
+    <Assembly>LTP.BuilderDALTranParam</Assembly>
+    <Classname>LTP.BuilderDALTranParam.BuilderDAL</Classname>
+    <Version>2.0</Version>
+  </Builder>
+</Builders>

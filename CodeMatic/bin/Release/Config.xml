@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ModuleSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProcPrefix>UP_</ProcPrefix>
+  <ProjectName>CodematicDemo</ProjectName>
+  <Namepace>Maticsoft</Namepace>
+  <Folder />
+  <AppFrame>S3</AppFrame>
+  <DALType>94F2CF68-CECB-47b5-81D9-68BF5806ACF2</DALType>
+  <BLLType>18E25976-05E4-40BA-9227-5C339670E0F7</BLLType>
+  <WebType>18E25976-05E4-40BA-9227-5C339670EWEB</WebType>
+  <EditFont>新宋体</EditFont>
+  <EditFontSize>9</EditFontSize>
+  <DbHelperName>DbHelperSQL</DbHelperName>
+  <ModelPrefix />
+  <ModelSuffix />
+  <BLLPrefix />
+  <BLLSuffix />
+  <DALPrefix />
+  <DALSuffix />
+  <TabNameRule>same</TabNameRule>
+</ModuleSettings>

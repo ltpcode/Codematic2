@@ -1,0 +1,72 @@
+
+body 
+{
+	
+	
+	SCROLLBAR-FACE-COLOR: #ffffff; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #9e9e9e; 
+	SCROLLBAR-SHADOW-COLOR: #9e9e9e;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #9e9e9e; 
+	SCROLLBAR-TRACK-COLOR: #eaeaea; 
+	SCROLLBAR-DARKSHADOW-COLOR: #eaeaea
+    
+} 
+
+
+.table
+{
+	background-color: #DBE8F2;
+	border-style:solid;
+	
+}
+
+
+.Tabletitle 
+{
+	
+	background-color: #4455aa;
+	color: white;
+	font-size: 12px;
+	font-weight:bold;
+}
+
+
+TD.TableBody0 {background-color: #BFD3EE;}
+
+TD.TableBody1 {background-color: #e8f4ff;}
+
+TD.TableBody2 {background-color: #DBE8F2;}
+
+
+.xuline {
+	font-size: 12px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #75a6e5;
+	padding-top: 5px;
+	padding-bottom: 4px;
+}
+
+td 
+{  
+	font-family: "宋体"; 
+	font-size: 12px; 
+	color: #000000
+}
+
+a 
+{  
+	font-family: "宋体"; 
+	font-size: 12px; 
+	color: #000000; 
+	text-decoration: none
+}
+a:hover
+{  
+	font-family: "宋体"; font-size: 12px; color: #000000; text-decoration: underline
+}
+
+a.bai {  font-family: "宋体"; font-size: 12px; color: #FFFFFF; text-decoration: none}
+a.bai:hover {  font-family: "宋体"; font-size: 12px; color: #FFFFFF; text-decoration: underline}
+

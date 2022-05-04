@@ -1,0 +1,1030 @@
+<!--
+Copyright (c) 2000-2002 Microsoft Corp. All rights reserved.
+Version 1.0.2.226
+-->
+
+<public:component tagName="TabStrip" literalcontent="true" lightweight="true">
+<public:property name="targetID" />
+<public:property name="tabDefaultStyle" />
+<public:property name="tabHoverStyle" />
+<public:property name="tabSelectedStyle" />
+<public:property name="sepDefaultStyle" />
+<public:property name="sepHoverStyle" />
+<public:property name="sepSelectedStyle" />
+<public:property name="sepDefaultImageUrl" />
+<public:property name="sepHoverImageUrl" />
+<public:property name="sepSelectedImageUrl" />
+<public:property name="numTabs" get="f_NumTabs" id="propNumTabs" />
+<public:property name="numItems" get="f_NumItems" id="propNumItems" />
+<public:property name="selectedIndex" get="f_GetSelectedIndex" put="f_SetSelectedIndex" id="propSelectedIndex" />
+<public:property name="orientation" get="f_GetDirection" put="f_SetDirection" id="propOrientation" />
+<public:method name="createTabAt" internalname="f_PublicCreateTabAt" />
+<public:method name="createSeparatorAt" internalname="f_PublicCreateSeparatorAt" />
+<public:method name="getItem" internalname="f_PublicGetItem" />
+<public:method name="getTab" internalname="f_PublicGetTab" />
+<public:event name="onselectedindexchange" id="evtIndexChangeEvent" />
+<public:event name="onwcready" id="evtWCReady" />
+<public:attach event="oncontentready" onevent="f_Init()" />
+<public:attach event="ondocumentready" onevent="f_PostInit()" />
+<public:attach event="onselectstart" onevent="f_CancelEvent()" />
+<public:attach event="onkeydown" onevent="f_OnKeyDown()" />
+<public:attach event="onkeyup" onevent="f_OnKeyUp()" />
+<public:attach event="onpropertychange" onevent="f_PropChange()" />
+<public:defaults
+tabStop=true
+contentEditable=false
+canHaveHTML=true
+viewInheritStyle=true
+viewMasterTab=true
+viewLinkContent=false
+style="display:block"
+/>
+</public:component>
+<script language="JScript">
+var _OnStopCount = 0;
+var _InInit = true;
+var _Tabs = null;
+var _HoverIndex = -1;
+var _bHorizontal = true;
+var _NumTabs = 0;
+var _nSelectedIndex = -2;
+var _BuiltInTabDefaultStyle = "cursor:hand;background-color:buttonface";
+var _BuiltInTabHoverStyle = "background-color:buttonhighlight";
+var _BuiltInTabSelectedStyle = "cursor:default;background-color:buttonhighlight";
+var _BuiltInSepDefaultStyle = "";
+var _BuiltInSepHoverStyle = "";
+var _BuiltInSepSelectedStyle = "";
+var _StateVals = new Array();
+var _StateDefault = 1;
+var _StateHover = 2;
+var _StateSelected = 3;
+var _DelayEvent = false;
+var _FirstIndex = -1;
+var _TimerSet = false;
+var _TimerID = -1;
+var _IsSubmitting = false;
+function f_Init()
+{
+f_AddStopEvent();
+var cacheImageDef = new Image();
+var cacheImageHov = new Image();
+var cacheImageSel = new Image();
+cacheImageDef.src = sepDefaultImageUrl;
+cacheImageHov.src = sepHoverImageUrl;
+cacheImageSel.src = sepSelectedImageUrl;
+_StateVals["default"] = _StateDefault;
+_StateVals["hover"] = _StateHover;
+_StateVals["selected"] = _StateSelected;
+var oRoot = element.document.createElement("SPAN");
+oRoot.innerHTML = innerHTML;
+var oTable = element.document.createElement("TABLE");
+var oTBody = element.document.createElement("TBODY");
+oTable.style.fontSize = currentStyle.fontSize;
+oTable.style.fontFamily = currentStyle.fontFamily;
+oTable.style.fontWeight = currentStyle.fontWeight;
+oTable.style.color = currentStyle.color;
+oTable.cellSpacing = 0;
+oTable.cellPadding = 0;
+oTable.border = 0;
+if (element.currentStyle.direction != element.style.direction)
+oTable.style.direction = element.currentStyle.direction;
+else
+oTable.style.direction = element.style.direction;
+oTable.dir = element.dir;
+if (element.currentStyle.height != null)
+oTable.style.height = element.currentStyle.height;
+if (element.currentStyle.width != null)
+oTable.style.width = element.currentStyle.width;
+var oRow = null;
+if (_bHorizontal)
+{
+oRow = element.document.createElement("TR");
+oTBody.appendChild(oRow);
+}
+for (var nIndex = 0; nIndex < oRoot.children.length; nIndex++)
+{
+if (!_bHorizontal)
+{
+oRow = element.document.createElement("TR");
+oTBody.appendChild(oRow);
+}
+var oNode = oRoot.children[nIndex];
+var szTagName = oNode.tagName.toLowerCase();
+if ((szTagName != "tab") && (szTagName != "tabseparator"))
+continue;
+f_AppendTabContent(oRow, oNode);
+}
+_Tabs = _bHorizontal ? oTBody.childNodes[0] : oTBody;
+oTable.appendChild(oTBody);
+var numTabs = f_NumTabs()
+if (numTabs > 0)
+{
+var curIndex = _nSelectedIndex;
+_nSelectedIndex = -1;
+if (curIndex != -1)
+{
+if ((curIndex < 0) || (curIndex >= numTabs))
+curIndex = 0;
+f_SetSelectedIndex(curIndex);
+}
+}
+else
+{
+_nSelectedIndex = -1;
+}
+var oBody = element.document.createElement("BODY");
+var oHtml = element.document.createElement("HTML");
+oBody.appendChild(oTable);
+oHtml.appendChild(oBody);
+defaults.viewLink = oHtml.document;
+_InInit = false;
+}
+function f_PostInit()
+{
+f_CleanupEvents();
+f_NavigateMultiPage(f_GetTab(_nSelectedIndex));
+evtWCReady.fire(createEventObject());
+}
+function f_CleanupEvents()
+{
+var eventArray = window.__tabStripAttachedEvents;
+if ((eventArray != null) && (eventArray[0]))
+{
+var newArray = new Array(false);
+for (var i = 1; i < eventArray.length; i++)
+{
+if (element.document.all[eventArray[i][0]] == null)
+{
+element.document.detachEvent("onstop", eventArray[i][1]);
+}
+else
+{
+newArray = newArray.concat(new Array(eventArray[i]));
+}
+}
+window.__tabStripAttachedEvents = newArray;
+}
+}
+function f_AddStopEvent()
+{
+var eventArray = window.__tabStripAttachedEvents;
+if (eventArray == null)
+{
+eventArray = new Array(false);
+}
+element.document.attachEvent("onstop", f_OnStop);
+eventArray[0] = true;
+entry = new Array(element.uniqueID, f_OnStop);
+window.__tabStripAttachedEvents = eventArray.concat(new Array(entry));
+}
+function f_AppendTabContent(parent, node)
+{
+var szTagName = node.tagName.toLowerCase();
+var isTab = (szTagName == "tab");
+var oCell = element.document.createElement("TD");
+oCell.mergeAttributes(node, false);
+if (isTab)
+{
+oCell.setAttribute("_type", "tab", 0);
+oCell.attachEvent("onclick", f_TabClick);
+oCell.attachEvent("onmousedown", f_TabClick);
+oCell.attachEvent("onmouseover", f_TabOver);
+oCell.attachEvent("onmouseout", f_TabOut);
+oCell.setAttribute("index", _NumTabs, 0);
+_NumTabs++;
+}
+else if (szTagName == "tabseparator")
+{
+oCell.setAttribute("_type", "separator", 0);
+}
+else
+{
+return;
+}
+var cacheImageDef = new Image();
+var cacheImageHov = new Image();
+var cacheImageSel = new Image();
+cacheImageDef.src = node.getAttribute("defaultImageUrl");
+cacheImageHov.src = node.getAttribute("hoverImageUrl");
+cacheImageSel.src = node.getAttribute("selectedImageUrl");
+var content;
+if (isTab)
+{
+content = element.document.createElement("A");
+oCell.appendChild(content);
+if (oCell.tabIndex > 0)
+{
+content.tabIndex = oCell.tabIndex;
+oCell.tabIndex = -1;
+}
+if (oCell.title != "")
+{
+content.title = oCell.title;
+oCell.title = "";
+}
+}
+else
+{
+content = oCell;
+}
+var szText = node.getAttribute("text");
+if (szText != null)
+{
+var oTextSpan = element.document.createElement("SPAN");
+oTextSpan.innerText = szText;
+content.appendChild(oTextSpan);
+}
+else
+{
+while (node.childNodes.length > 0)
+content.appendChild(node.childNodes[0]);
+}
+f_ApplyState(oCell, "default");
+oCell.noWrap = true;
+oCell.attachEvent("onkeyup", f_OnTabKeyUp);
+parent.appendChild(oCell);
+}
+function f_PropChange()
+{
+switch (event.propertyName)
+{
+case "tabDefaultStyle":
+case "tabHoverStyle":
+case "tabSelectedStyle":
+case "sepDefaultStyle":
+case "sepHoverStyle":
+case "sepSelectedStyle":
+case "sepDefaultImageUrl":
+case "sepHoverImageUrl":
+case "sepSelectedImageUrl":
+if (!_InInit)
+{
+f_Redraw();
+}
+break;
+case "_submitting":
+_IsSubmitting = (element.getAttribute("_submitting") == 'true');
+_OnStopCount = 0;
+break;
+case "style.direction":
+if (_bHorizontal)
+_Tabs.parentElement.parentElement.style.direction = element.style.direction;
+else
+_Tabs.parentElement.style.direction = element.style.direction;
+break;
+case "dir":
+if (_bHorizontal)
+_Tabs.parentElement.parentElement.dir = element.dir;
+else
+_Tabs.parentElement.dir = element.dir;
+break;
+}
+}
+function f_PublicCreateTabAt(index)
+{
+return f_AddItemAt(index, "tab");
+}
+function f_PublicCreateSeparatorAt(index)
+{
+return f_AddItemAt(index, "tabseparator");
+}
+function f_AddItemAt(index, type)
+{
+var numItems = f_NumItems();
+if ((index < 0) || (index > numItems))
+index = numItems;
+var renumber = false;
+var cell = element.document.createElement("TD");
+if (type == "tab")
+{
+cell.setAttribute("_type", "tab", 0);
+cell.attachEvent("onclick", f_TabClick);
+cell.attachEvent("onmousedown", f_TabClick);
+cell.attachEvent("onmouseover", f_TabOver);
+cell.attachEvent("onmouseout", f_TabOut);
+_NumTabs++;
+renumber = true;
+var link = element.document.createElement("A");
+cell.appendChild(link);
+}
+else if (type == "tabseparator")
+{
+cell.setAttribute("_type", "separator", 0);
+}
+else
+{
+return null;
+}
+f_ApplyState(cell, "default");
+cell.noWrap = true;
+cell.attachEvent("onkeyup", f_OnTabKeyUp);
+var addItem = cell;
+if (!_bHorizontal)
+{
+row = element.document.createElement("TR");
+row.appendChild(cell);
+addItem = row;
+}
+if (index == numItems)
+_Tabs.appendChild(addItem);
+else
+_Tabs.children[index].insertAdjacentElement("beforeBegin", addItem);
+if (renumber)
+f_RenumberTabs();
+if (type == "tab")
+{
+var tabIndex = cell.getAttribute("index");
+if (tabIndex <= _nSelectedIndex)
+{
+_nSelectedIndex++
+f_FireIndexChangeEvent();
+f_NavigateMultiPage(cell);
+}
+else if (_nSelectedIndex < 0)
+{
+f_SetSelectedIndex(0);
+}
+}
+f_NumItemsChanged();
+if (type == "tab")
+f_NumTabsChanged();
+return f_PublicMakeContract(cell);
+}
+function f_NumItemsChanged()
+{
+if (!_InInit)
+propNumItems.fireChange();
+}
+function f_NumTabsChanged()
+{
+if (!_InInit)
+propNumTabs.fireChange();
+}
+function f_RenumberTabs()
+{
+var tabIndex = 0;
+for (var index = 0; index < _Tabs.children.length; index++)
+{
+var cell = _Tabs.children[index];
+if (!_bHorizontal)
+cell = cell.children[0];
+if (cell.getAttribute("_type") == "tab")
+{
+cell.setAttribute("index", tabIndex, 0);
+tabIndex++;
+}
+}
+}
+function f_FixSelectedIndex()
+{
+var numTabs = f_NumTabs();
+if (numTabs == 0)
+{
+if (_nSelectedIndex >= 0)
+{
+_nSelectedIndex = -1;
+f_FireIndexChangeEvent();
+}
+return;
+}
+if (_nSelectedIndex < 0)
+f_SetSelectedIndex(0);
+else if (_nSelectedIndex < numTabs)
+{
+var tab = f_GetTab(_nSelectedIndex);
+f_SetTabActive(tab);
+}
+else
+f_SetSelectedIndex(numTabs - 1);
+}
+function f_PublicRemoveItem(item)
+{
+var renumber = false;
+var fixIndex = false;
+var fireIndexChange = false;
+var isTab = (item.getAttribute("_type") == "tab");
+if (isTab)
+{
+var itemIndex = item.getAttribute("index");
+if (itemIndex == _nSelectedIndex)
+fixIndex = true;
+else if (itemIndex < _nSelectedIndex)
+{
+_nSelectedIndex--;
+fireIndexChange = true;
+}
+renumber = true;
+_NumTabs--;
+}
+if (!_bHorizontal)
+item = item.parentElement;
+item.removeNode(true);
+if (renumber)
+f_RenumberTabs();
+if (fixIndex)
+f_FixSelectedIndex();
+else if (fireIndexChange)
+{
+f_FireIndexChangeEvent();
+f_NavigateMultiPage(f_GetTab(_nSelectedIndex));
+}
+f_NumItemsChanged();
+if (isTab)
+f_NumTabsChanged();
+}
+function f_PublicGetItem(index)
+{
+if ((index < 0) || (index >= _Tabs.children.length))
+return null;
+var item = _Tabs.children[index];
+if (!_bHorizontal)
+item = item.children[0];
+return f_PublicMakeContract(item);
+}
+function f_PublicGetTab(index)
+{
+if ((index < 0) || (index >= _NumTabs))
+return null;
+return f_PublicMakeContract(f_GetTab(index));
+}
+function f_PublicMakeContract(item)
+{
+var obj = new Object();
+obj.getType = function() { return item.getAttribute("_type"); };
+obj.remove = function() { f_PublicRemoveItem(item); };
+obj.getAttribute = function(name) { return f_PublicGetAttribute(item, name); };
+obj.setAttribute = function(name, value) { f_PublicSetAttribute(item, name, value); };
+return obj;
+}
+function f_PublicGetAttribute(item, name)
+{
+return item.getAttribute(name);
+}
+function f_PublicSetAttribute(item, name, value)
+{
+var cacheImage;
+var lname = name.toLowerCase();
+if ((item.getAttribute("_type") == "tab") && ((lname == "tabindex") || (lname == "title")))
+{
+item = item.children[0];
+}
+if ((lname != "innertext") && (lname != "innerhtml") && (lname != "outerhtml"))
+item.setAttribute(name, value, 0);
+switch (lname)
+{
+case "defaultstyle":
+case "hoverstyle":
+case "selectedstyle":
+f_ApplyState(item, "redraw");
+break;
+case "defaultimageurl":
+case "hoverimageurl":
+case "selectedimageurl":
+cacheImage = new Image();
+cacheImage.src = value;
+f_ApplyState(item, "redraw");
+break;
+case "text":
+case "innertext":
+f_DoText(item, value);
+break;
+case "innerhtml":
+f_DoHTML(item, value);
+break;
+}
+}
+function getContent(item)
+{
+if (item.getAttribute("_type") == "tab")
+return item.children[0];
+return item;
+}
+function f_DoText(item, text)
+{
+var content = getContent(item);
+f_RemoveTextNodes(item);
+var span = element.document.createElement("SPAN");
+span.innerText = text;
+content.appendChild(span);
+}
+function f_DoHTML(item, html)
+{
+var content = getContent(item);
+f_RemoveTextNodes(item);
+var span = element.document.createElement("SPAN");
+span.innerHTML = html;
+content.appendChild(span);
+}
+function f_RemoveTextNodes(item)
+{
+var content = getContent(item);
+if (content.hasChildNodes())
+{
+if (item.getAttribute("_spadded"))
+item.removeAttribute("_spadded");
+var index = (item.getAttribute("_imgadded") == null) ? 0 : 1;
+while (index < content.childNodes.length)
+content.childNodes[index].removeNode(true);
+}
+}
+function f_TabClick()
+{
+if (_IsSubmitting)
+return;
+if (event.button > 1)
+return;
+f_SetIndexByEvent();
+}
+function f_TabOver()
+{
+if (_IsSubmitting)
+return;
+var oNode = f_FindSurroundingCell(event.srcElement);
+if ((oNode == null) || oNode.contains(event.fromElement))
+return;
+if (oNode.isDisabled)
+return;
+var nIndex = oNode.getAttribute("index");
+if ((nIndex != null) && (nIndex != _nSelectedIndex))
+{
+if (oNode.getAttribute("_hover") == null)
+{
+if (_HoverIndex >= 0)
+{
+var oldTab = f_GetTab(_HoverIndex);
+if (oldTab != null)
+{
+if (_HoverIndex != _nSelectedIndex)
+f_SetTabInactive(oldTab);
+oldTab.removeAttribute("_hover");
+}
+}
+f_SetTabHover(oNode);
+oNode.setAttribute("_hover", "true");
+_HoverIndex = nIndex;
+}
+}
+}
+function f_TabOut()
+{
+if (_IsSubmitting)
+return;
+var oNode = f_FindSurroundingCell(event.srcElement);
+if ((oNode == null) || oNode.contains(event.toElement))
+return;
+if (oNode.isDisabled)
+return;
+var nIndex = oNode.getAttribute("index");
+if ((nIndex != null) && (nIndex != _nSelectedIndex))
+{
+f_SetTabInactive(oNode);
+oNode.removeAttribute("_hover");
+if ((_HoverIndex >= 0) && (_HoverIndex != nIndex))
+{
+var oldTab = f_GetTab(_HoverIndex);
+if (oldTab != null)
+{
+if (_HoverIndex != _nSelectedIndex)
+f_SetTabInactive(oNode);
+oNode.removeAttribute("_hover");
+}
+}
+_HoverIndex = -1;
+}
+}
+function f_CancelEvent()
+{
+event.returnValue = false;
+}
+function f_FindSurroundingCell(oNode)
+{
+while (oNode != null)
+{
+if (oNode.getAttribute("_type") != null)
+return oNode;
+oNode = oNode.offsetParent;
+}
+return null;
+}
+function f_GetTab(index)
+{
+var nIndex = f_ConvertIndexToNodeIndex(index);
+if (nIndex >= 0)
+{
+var oTab = _Tabs.children[nIndex];
+return _bHorizontal ? oTab : oTab.childNodes[0];
+}
+return null;
+}
+function f_Redraw()
+{
+for (var nIndex = 0; nIndex < _Tabs.children.length; nIndex++)
+{
+var oNode = _Tabs.children[nIndex];
+if (!_bHorizontal)
+oNode = oNode.childNodes[0];
+f_ApplyState(oNode, "redraw");
+}
+}
+function f_GetTabNodeIndex(tab)
+{
+return f_ConvertIndexToNodeIndex(tab.getAttribute("index"));
+}
+function f_ConvertIndexToNodeIndex(index)
+{
+if ((index == null) || (index < 0) || (_Tabs == null) || (index >= _Tabs.children.length))
+return -1;
+for (var nIndex = 0; nIndex < _Tabs.children.length; nIndex++)
+{
+var oNode = _Tabs.children[nIndex];
+if (!_bHorizontal)
+oNode = oNode.childNodes[0];
+var attrIndex = oNode.getAttribute("index");
+if ((attrIndex != null) && (attrIndex == index))
+return nIndex;
+}
+return -1;
+}
+function f_CreateStyleString(tab, szState)
+{
+var state = _StateVals[szState];
+var isTab = (tab.getAttribute("_type") == "tab");
+var localDefault = tab.getAttribute("defaultStyle");
+var local = tab.getAttribute(szState + "Style");
+var calcDefault;
+var builtInColor = element.style.color;
+if ((builtInColor == null) || (builtInColor == ""))
+builtInColor = ";color:buttontext";
+else
+builtInColor = "";
+if (isTab)
+calcDefault = _BuiltInTabDefaultStyle + builtInColor + ";" + tabDefaultStyle + ";" + localDefault + ";";
+else
+calcDefault = _BuiltInSepDefaultStyle + ";" + sepDefaultStyle + ";" + localDefault + ";";
+if (tab.isDisabled || element.isDisabled)
+calcDefault += "cursor:default" + ";";
+if (szState == "default")
+return calcDefault;
+var isHover = (szState == "hover");
+if (isTab && isHover)
+{
+return calcDefault + _BuiltInTabHoverStyle + ";" + tabHoverStyle + ";" + local;
+}
+else if (isTab)
+{
+return calcDefault + _BuiltInTabSelectedStyle + ";" + tabSelectedStyle + ";" + local;
+}
+else if (isHover)
+{
+return calcDefault + _BuiltInSepHoverStyle + ";" + sepHoverStyle + ";" + local;
+}
+else
+{
+return calcDefault + _BuiltInSepSelectedStyle + ";" + sepSelectedStyle + ";" + local;
+}
+}
+function f_CreateImageUrl(tab, szState)
+{
+var state = _StateVals[szState];
+var szLocal = tab.getAttribute(szState + "ImageUrl");
+if (szLocal != null)
+return szLocal;
+szLocal = tab.getAttribute("defaultImageUrl");
+if (szLocal != null)
+return szLocal;
+if (tab.getAttribute("_type") == "tab")
+return null;
+if ((state == _StateHover) && (sepHoverImageUrl != null) && (sepHoverImageUrl != ""))
+{
+return sepHoverImageUrl;
+}
+else if ((state == _StateSelected) && (sepSelectedImageUrl != null) && (sepSelectedImageUrl != ""))
+{
+return sepSelectedImageUrl;
+}
+else if ((sepDefaultImageUrl != null) && (sepDefaultImageUrl != ""))
+{
+return sepDefaultImageUrl;
+}
+return null;
+}
+function f_ApplyState(tab, state)
+{
+var content = getContent(tab);
+var curState = tab.getAttribute("state");
+if (curState == state)
+return;
+if (state == "redraw")
+state = curState;
+var szImageUrl = f_CreateImageUrl(tab, state);
+if (szImageUrl != null)
+{
+if (tab.getAttribute("_spadded") != null)
+{
+content.childNodes[0].removeNode(true);
+tab.removeAttribute("_spadded", 0);
+}
+var oImg = element.document.createElement("IMG");
+oImg.src = szImageUrl;
+oImg.align = "absmiddle";
+if (tab.getAttribute("_imgadded") == null)
+tab.setAttribute("_imgadded", "true", 0);
+else
+content.children[0].removeNode(true);
+if (content.hasChildNodes())
+content.insertBefore(oImg, content.childNodes[0]);
+else
+content.insertBefore(oImg);
+}
+else if (tab.getAttribute("_imgadded") != null)
+{
+content.children[0].removeNode(true);
+tab.removeAttribute("_imgadded", 0);
+}
+if (!content.hasChildNodes())
+{
+content.innerHTML = "&nbsp;";
+tab.setAttribute("_spadded", "true", 0);
+}
+var szStyle = f_CreateStyleString(tab, state);
+if (szStyle != "")
+tab.style.cssText = ";" + szStyle;
+tab.setAttribute("state", state, 0);
+}
+function f_SetSeparatorState(sep, nIndex, state)
+{
+if (state == "selected")
+{
+f_ApplyState(sep, state);
+return;
+}
+var oPrev = (nIndex >= 1) ? _Tabs.children[nIndex - 1] : null;
+var oNext = ((nIndex + 1) < _Tabs.children.length) ? _Tabs.children[nIndex + 1] : null;
+if (!_bHorizontal && (oPrev != null))
+oPrev = oPrev.childNodes[0];
+if (!_bHorizontal && (oNext != null))
+oNext = oNext.childNodes[0];
+var szPrevState = null;
+var szNextState = null;
+if ((oPrev != null) && (oPrev.getAttribute("index") != null))
+szPrevState = oPrev.getAttribute("state");
+if ((oNext != null) && (oNext.getAttribute("index") != null))
+szNextState = oNext.getAttribute("state");
+var stateVal = _StateVals[state];
+if (szPrevState != null)
+{
+if (_StateVals[szPrevState] > stateVal)
+return;
+}
+if (szNextState != null)
+{
+if (_StateVals[szNextState] > stateVal)
+return;
+}
+f_ApplyState(sep, state);
+}
+function f_SetTabState(tab, state)
+{
+f_ApplyState(tab, state);
+var nIndex = f_GetTabNodeIndex(tab);
+var oPrev = (nIndex >= 1) ? _Tabs.children[nIndex - 1] : null;
+var oNext = ((nIndex + 1) < _Tabs.children.length) ? _Tabs.children[nIndex + 1] : null;
+if (!_bHorizontal && (oPrev != null))
+oPrev = oPrev.childNodes[0];
+if (!_bHorizontal && (oNext != null))
+oNext = oNext.childNodes[0];
+if ((oPrev != null) && (oPrev.getAttribute("index") == null))
+f_SetSeparatorState(oPrev, nIndex - 1, state);
+if ((oNext != null) && (oNext.getAttribute("index") == null))
+f_SetSeparatorState(oNext, nIndex + 1, state);
+}
+function f_SetTabActive(tab)
+{
+f_SetTabState(tab, "selected");
+tab.children[0].tabIndex = 0;
+tab.children[0].focus();
+}
+function f_SetTabInactive(tab)
+{
+f_SetTabState(tab, "default");
+tab.children[0].tabIndex = -1;
+}
+function f_SetTabHover(tab)
+{
+f_SetTabState(tab, "hover");
+}
+function f_NumTabs()
+{
+return _NumTabs;
+}
+function f_NumItems()
+{
+return _Tabs.children.length;
+}
+function f_GetSelectedIndex()
+{
+if (_nSelectedIndex < 0)
+return -1;
+return _nSelectedIndex;
+}
+function f_NavigateMultiPage(oTab)
+{
+var oTargetID = (oTab == null) ? null : oTab.getAttribute("targetid");
+if (oTargetID != null)
+{
+var oTarget = element.document.all[oTargetID];
+if (oTarget != null)
+{
+oTarget.setAttribute("activate", "true", 0);
+}
+}
+else if (targetID != null)
+{
+var oTarget = element.document.all[targetID];
+if (oTarget != null)
+{
+oTarget.selectedIndex = _nSelectedIndex;
+}
+}
+}
+function f_SetSelectedIndex(value)
+{
+if (_nSelectedIndex == value)
+return;
+if (value == -1)
+{
+var oPrevTab = f_GetTab(_nSelectedIndex);
+if (oPrevTab != null)
+f_SetTabInactive(oPrevTab);
+_nSelectedIndex = -1;
+if (!_InInit)
+{
+if (!_DelayEvent)
+f_FireIndexChangeEvent();
+}
+return;
+}
+var oTab = f_GetTab(value);
+if (oTab != null)
+{
+var oPrevTab = f_GetTab(_nSelectedIndex);
+if (oPrevTab != null)
+f_SetTabInactive(oPrevTab);
+f_SetTabActive(oTab);
+_nSelectedIndex = value;
+if (!_InInit)
+{
+f_NavigateMultiPage(oTab);
+if (!_DelayEvent)
+f_FireIndexChangeEvent();
+}
+}
+else if (_InInit)
+{
+_nSelectedIndex = value;
+}
+}
+function f_FireIndexChangeEvent()
+{
+var oEvent = createEventObject();
+oEvent.index = _nSelectedIndex;
+evtIndexChangeEvent.fire(oEvent);
+if (!_InInit)
+propSelectedIndex.fireChange();
+}
+function f_GetDirection()
+{
+return _bHorizontal ? "horizontal" : "vertical";
+}
+function f_SetDirection(value)
+{
+if (value == null)
+return;
+value = value.toLowerCase();
+if (value == "")
+return;
+if (!_bHorizontal && (value == "horizontal"))
+{
+_bHorizontal = true;
+if (!_InInit)
+{
+f_RearrangeHorizontal();
+propOrientation.fireChange();
+}
+}
+else if (_bHorizontal && (value == "vertical"))
+{
+_bHorizontal = false;
+if (!_InInit)
+{
+f_RearrangeVertical();
+propOrientation.fireChange();
+}
+}
+}
+function f_RearrangeHorizontal()
+{
+while (_Tabs.children.length > 1)
+{
+_Tabs.children[0].appendChild(_Tabs.children[1].children[0]);
+_Tabs.children[1].removeNode(true);
+}
+_Tabs = _Tabs.children[0];
+}
+function f_RearrangeVertical()
+{
+_Tabs = _Tabs.parentElement;
+while (_Tabs.children[0].children.length > 1)
+{
+var row = element.document.createElement("TR");
+_Tabs.appendChild(row);
+row.appendChild(_Tabs.children[0].children[1]);
+}
+}
+function f_OnKeyDown()
+{
+if (_IsSubmitting)
+return;
+if ((_bHorizontal && ((event.keyCode == 37) || (event.keyCode == 39))) ||
+(!_bHorizontal && ((event.keyCode == 38) || (event.keyCode == 40))))
+{
+var dir = (event.keyCode <= 38) ? -1 : 1;
+if ((element.dir != null) && (element.dir == "rtl") &&
+((event.keyCode == 37) || (event.keyCode == 39)))
+dir *= -1;
+if (!_DelayEvent)
+_FirstIndex = _nSelectedIndex;
+var newIndex = _nSelectedIndex;
+var oTab = null;
+var oStopTab = f_GetTab(_nSelectedIndex);
+do
+{
+newIndex = Number(newIndex) + Number(dir);
+if (newIndex < 0)
+newIndex = _NumTabs - 1;
+else if (newIndex >= _NumTabs)
+newIndex = 0;
+oTab = f_GetTab(newIndex);
+}
+while ((oTab != null) && (oTab.isDisabled) && (oTab != oStopTab));
+_DelayEvent = true;
+f_SetSelectedIndex(newIndex);
+}
+}
+function f_OnKeyUp()
+{
+if (_IsSubmitting)
+return;
+if (_DelayEvent)
+{
+_DelayEvent = false;
+if (_FirstIndex != _nSelectedIndex)
+f_SetEventTimeout();
+_FirstIndex = -1;
+}
+}
+function f_OnTabKeyUp()
+{
+if (_IsSubmitting)
+return;
+if ((event.srcElement.accessKey != null) && event.altKey &&
+(event.srcElement.accessKey.toUpperCase().charCodeAt() == event.keyCode))
+{
+f_SetIndexByEvent();
+}
+}
+function f_SetIndexByEvent()
+{
+var oNode = f_FindSurroundingCell(event.srcElement);
+if (oNode == null)
+return;
+if (oNode.isDisabled)
+return;
+var nIndex = oNode.getAttribute("index");
+if ((nIndex != null) && (nIndex != _nSelectedIndex))
+f_SetSelectedIndex(nIndex);
+}
+function f_ClearEventTimeout()
+{
+if (_TimerSet)
+{
+window.clearTimeout(_TimerID);
+_TimerSet = false;
+}
+}
+function f_SetEventTimeout()
+{
+f_ClearEventTimeout();
+_TimerID = window.setTimeout(f_FireIndexChangeEvent, 500, "JScript");
+_TimerSet = true;
+}
+function f_OnStop()
+{
+if (!_IsSubmitting || (_OnStopCount > 0))
+{
+_IsSubmitting = false;
+element.removeAttribute("_submitting");
+}
+_OnStopCount++;
+}
+</script>

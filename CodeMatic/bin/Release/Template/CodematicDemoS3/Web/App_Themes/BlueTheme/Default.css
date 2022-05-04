@@ -1,0 +1,142 @@
+﻿body {	
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;	
+	background-repeat: repeat-x;
+	font-size: 9pt;
+}
+a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #1639A9;
+	text-decoration: underline;
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+.link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.65em;
+	text-transform: uppercase;
+	color: #333333;
+	text-indent: 10px;
+}
+
+.disabledLink 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.65em;
+	text-transform: uppercase;
+	color: #999999;
+	text-indent: 10px;
+}
+
+/*左框架树背景色*/
+.tree_bgcolor
+{
+	background-color:#e3eeff;	
+}
+/*左框架树背景图*/
+.leftbj_bgimage 
+{
+	background-image: url(../../images/left-bj.gif);	
+}
+.left1_bgimage
+{
+	background-image: url(../../images/left-1.gif);	
+}
+.left2_bgimage
+{
+	background-image: url(../../images/left-2.gif);	
+}
+.left3_bgimage
+{
+	background-image: url(../../images/left-3.gif);	
+}
+
+/*分隔块色*/
+.spliter_color
+{
+	background-color:#6B7DDE;	
+}
+
+/*顶框背景图片*/
+.top1_bgimage
+{
+	background-image: url(../../images/top-1.gif);
+}
+.top2_bgimage
+{
+	background-image: url(../../images/top-2.gif);
+}
+.top3_bgimage
+{
+	background-image: url(../../images/top-3.gif);
+}
+.top4_bgimage
+{
+	background-image: url(../../images/top-4.gif);
+}
+.top5_bgimage
+{
+	background-image: url(../../images/top-5.gif);
+}
+.topbj_bgimage
+{
+	background-image: url(../../images/top-bj.gif);
+}
+
+/*顶框工具条背景图片*/
+.topbar_bgimage
+{
+	background-image: url(../../images/topbar_01.jpg);
+}
+
+/* main背景图片*/
+.firstpage_bgimage
+{
+	background-image: url(../../images/dbsx_01.gif);
+}
+
+.desktop_bj
+{
+	background-image: url(../../images/right-bj.gif);	
+}
+.desktop_bgimage
+{
+	background-image: url(../../images/right.gif);	
+}
+
+
+/*最外层表格背景*/
+.table_bgcolor
+{
+	background-color:#F5F9FF;
+}
+
+/*表格边框色*/
+.table_bordercolor
+{
+	m1:expression(this.borderColorLight='#4F7FC9');/*中层表格亮边框*/
+    m2:expression(this.borderColorDark='#D3D8E0');/*中层表格暗边框*/
+}
+
+/*中层表格标题栏*/
+.table_titlebgcolor
+{
+	background-color:#E3EFFF;
+}
+
+
+/*表单中必填字段*颜色*/
+.form_requestcolor
+{
+	color:#E78A29;
+
+}
+
+

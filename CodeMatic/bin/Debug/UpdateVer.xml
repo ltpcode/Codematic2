@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<UpdateSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>2.6</Version>
+  <Description>增加新建项目，插件代码生成，父子表代码生成等新功能</Description> 
+  <ServerUrl>http://www.Maticsoft.com</ServerUrl>      
+</UpdateSettings>

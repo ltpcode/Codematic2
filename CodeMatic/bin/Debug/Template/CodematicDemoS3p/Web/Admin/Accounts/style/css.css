@@ -1,0 +1,245 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,table,tr,td,th,p,span,div,p{  font:12px black verdana,arial; }
+.b12 {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 21px;
+}
+.grey12 {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+}
+.table1 {
+	font-size: 12px;
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 4px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #5789c8;
+	border-right-color: #5789c8;
+	border-bottom-color: #5789c8;
+	border-left-color: #5789c8;
+	display: table-row-group;
+}
+
+.green12 {
+	font-size: 12px;
+	color: #00872c;
+	text-decoration: none;
+}
+.bluegreg14 {
+	font-size: 14px;
+	color: #1c4185;
+	text-decoration: none;
+	line-height: 22px;
+}
+.bluegreg12 {
+	font-size: 12px;
+	color: #1c4185;
+	text-decoration: none;
+	line-height: 21px;
+}
+
+.or12 {
+	font-size: 12px;
+	color: #ff6c00;
+	text-decoration: none;
+}
+.blue12 {
+	font-size: 12px;
+	color: #0687ff;
+	text-decoration: underline;
+}
+.search {
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	padding: 4px;
+	margin: 4px;
+	border: 1px solid #999999;
+	text-align: left;
+}
+.DataTable{  
+    table-layout:fixed;   
+	word-break:normal;  
+	background-color:#5789c8;  
+	border-collapse:collapse;  
+	border:1px solid white;  
+}
+.TitleTr{
+  background-color:#5789c8;
+  border:1px solid #a3bde0;
+  color:white;
+  font-weight:bolder;
+  top:expression(this.offsetParent.scrollTop);
+}
+
+.TotalTr{
+	color:white;
+	font-weight:bolder;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 3px;
+}
+.white12 {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.pic {
+	border: 1px solid #dddddd;
+}
+.green12 {
+	font-size: 12px;
+	color: #00872c;
+	text-decoration: none;
+}
+.xuline {
+	font-size: 12px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #75a6e5;
+	padding-top: 5px;
+	padding-bottom: 4px;
+}
+.b14 {
+	font-size: 14px;
+	color: #000000;
+}
+.table2 {
+	border: 1px solid #b2d3ff;
+	font-size: 12px;
+	background-color: #e4effe;
+	left: 3px;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+}
+.red14 {
+	font-size: 14px;
+	color: #ff0000;
+}
+.or14 {
+	font-size: 14px;
+	color: #fe8900;
+}
+.titlegrey {
+	font-size: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 36px;
+	padding-left: 20px;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #f4f4f4;
+	padding-top: 11px;
+}
+.kb {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E7FBFF;
+	background-color: #e7fbff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #addfff;
+	border-bottom-color: #addfff;
+	border-left-color: #addfff;
+}
+.kb2{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E7FBFF;
+	background-color: #e7fbff;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-bottom-color: #addfff;
+	border-left-color: #addfff;
+}
+.kw {
+	background-color: #fffbff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #e7e3e7;
+	border-bottom-color: #e7e3e7;
+}
+.kw2{
+	background-color: #fffbff;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e7e3e7;
+}
+.kw3{
+	background-color: #fffbff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-right-style: solid;
+	border-top-color: #e7e3e7;
+	border-bottom-color: #e7e3e7;
+	border-right-color: #e7e3e7;
+}
+.kw4{
+	background-color: #fffbff;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-bottom-style: solid;
+	border-right-style: solid;
+	border-bottom-color: #e7e3e7;
+	border-right-color: #e7e3e7;
+}
+.LightTr{
+  background-color:#ffffff;
+  font-size: 12px;
+  color: #000000;
+  line-height: 21px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #5789c8;
+}
+
+.DarkTr{
+	font-size: 12px;
+	color: #000000;
+	line-height: 21px;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #5789c8;
+	filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#d3ebfc,endcolorstr=#FFFFFF,gradientType=0)
+}
+.rightline {
+    color: #ffffff;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #75a6e5;
+}

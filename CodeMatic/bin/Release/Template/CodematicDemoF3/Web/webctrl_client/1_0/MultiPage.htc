@@ -1,0 +1,155 @@
+<!--
+Copyright (c) 2000-2002 Microsoft Corp. All rights reserved.
+Version 1.0.2.226
+-->
+
+<public:component tagName="MultiPage" lightweight="true">
+<public:property name="selectedIndex" get="GetPageIndex" put="SetPageIndex" persist="true" value="0" id="propSelectedIndex" />
+<public:property name="numPages" get="NumPages" id="propNumPages" />
+<public:method name="createPageAt" internalname="f_CreatePageAt" />
+<public:event name="onselectedindexchange" id="evtPageChange" />
+<public:attach event="oncontentready" onevent="Init()" />
+<public:defaults
+tabStop="false"
+contentEditable="false"
+canHaveHTML="true"
+viewInheritStyle="true"
+viewMasterTab="false"
+viewLinkContent="false"
+style="display:block;visibility:hidden;overflow:auto"
+/>
+<script language="JScript">
+var _PageIndex = null;
+var _bInitProcess;
+function f_CreatePageAt(index)
+{
+var numPages = NumPages();
+if ((index < 0) || (index > numPages))
+index = numPages;
+var page = element.document.createElement("PageView");
+page.style.display = "none";
+page.attachEvent("onpropertychange", OnPropertyChange);
+if (index == numPages)
+{
+element.appendChild(page);
+}
+else
+{
+element.children[index].insertAdjacentElement("beforeBegin", page);
+}
+if (index <= _PageIndex)
+{
+_bInitProcess = true;
+SetPageIndex(_PageIndex + 1);
+_bInitProcess = false;
+}
+if (!_bInitProcess)
+{
+propNumPages.fireChange();
+if (_PageIndex < 0)
+SetPageIndex(0);
+}
+return page;
+}
+function OnPropertyChange()
+{
+if (event.propertyName.toLowerCase() == "activate")
+{
+var oNode = event.srcElement;
+var bActivate = oNode.getAttribute("activate");
+if ((bActivate != null) && (bActivate))
+{
+SetPageIndex(ConvertPageToIndex(oNode));
+}
+}
+}
+function Init()
+{
+_bInitProcess = true;
+ProcessContent();
+var initIndex;
+if (numPages == 0)
+initIndex = -1;
+else if ((_PageIndex == null) || (_PageIndex == "") || (_PageIndex < 0) || (_PageIndex >= numPages) || (GetPage(_PageIndex) == null))
+initIndex = 0;
+else
+initIndex = _PageIndex;
+_PageIndex = -1;
+SetPageIndex(initIndex);
+defaults.style.visibility = "inherit";
+_bInitProcess = false;
+}
+function ProcessContent()
+{
+for (var nIndex = 0; nIndex < element.childNodes.length; nIndex++)
+{
+var node = element.childNodes[nIndex];
+if ((node.tagName != null) && (node.tagName.toLowerCase() == "pageview"))
+{
+node.style.display = "none";
+node.attachEvent("onpropertychange", OnPropertyChange);
+}
+else
+{
+node.removeNode(true);
+nIndex--;
+}
+}
+}
+function NumPages()
+{
+return element.childNodes.length;
+}
+function GetPage(nIndex)
+{
+if ((nIndex == null) || (nIndex < 0) ||
+(nIndex >= element.childNodes.length))
+return null;
+return element.childNodes[nIndex];
+}
+function ConvertPageToIndex(page)
+{
+for (var nIndex = 0; nIndex < element.childNodes.length; nIndex++)
+{
+var node = element.childNodes[nIndex];
+if (node.uniqueID == page.uniqueID)
+return nIndex;
+}
+return -1;
+}
+function GetPageIndex()
+{
+return _PageIndex;
+}
+function SetPageIndex(value)
+{
+if (_PageIndex == value)
+return;
+var page = GetPage(value);
+var prevPage = GetPage(_PageIndex);
+if ((_PageIndex == null) || (page != null))
+_PageIndex = value;
+if (page == null)
+return;
+if (prevPage != null)
+{
+prevPage.style.display = "none";
+}
+page.style.display = "block";
+if (!_bInitProcess)
+{
+var oEvent = CreatePageEvent(value, page);
+evtPageChange.fire(oEvent);
+}
+if (!_bInitProcess)
+propSelectedIndex.fireChange();
+}
+function CreatePageEvent(index, page)
+{
+oEvent = createEventObject();
+oEvent.selectedIndex = index;
+oEvent.page = page;
+return oEvent;
+}
+</script>
+</public:component>
